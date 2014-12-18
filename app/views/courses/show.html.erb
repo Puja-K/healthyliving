@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="thumbnail">
+          <%= image_tag @course.image.url%>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3><%= @course.name %></h3>
+        <p><%= @course.description %></p>
+      </p> <strong>Level:</strong><%= @course.level %></p>
+      <p><strong>Duration:</strong><%= @course.duration %></p>
+      <p><strong>Format:</strong><%= @course.format %></p>
+    </div>
+  </div>
+
+
+<%= link_to 'Edit', edit_course_path(@course) , class: "btn btn-link"%> |
+<%= link_to 'Back', courses_path, class: "btn btn-link" %>
