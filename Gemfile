@@ -26,6 +26,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+#for storing images
+gem "paperclip-dropbox", ">= 1.1.7"
+#for protecting our account data on dropbox
+gem "figaro"
 
 group :production do 
 	gem 'pg'
