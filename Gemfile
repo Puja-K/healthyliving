@@ -31,6 +31,8 @@ gem "paperclip-dropbox", ">= 1.1.7"
 #for protecting our account data on dropbox
 gem "figaro"
 
+gem 'devise'
+
 group :production do 
 	gem 'pg'
 	gem 'rails_12factor'
