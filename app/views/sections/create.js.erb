@@ -12,6 +12,7 @@
 <%else %>
 	$('div#error_explanation').remove();
  $('#sectionstable tr:last').after("<%= escape_javascript render partial: "showform", locals: {s: @section} %>");
+ $('tr#emptyrow').remove();
  	$('.editable').editable();
   $('#section_textbox').val("");
 <% end %>
