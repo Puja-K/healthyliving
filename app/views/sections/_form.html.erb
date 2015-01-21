@@ -1,0 +1,46 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<div class="row">
+		<div class="progress">
+		  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+		    <span class="sr-only">40% Complete (success)</span>
+		  </div>
+		</div>
+		<h4>New section</h4>
+		<%= form_for(@section, url: course_sections_path, remote: true, :html => { :multipart => true }) do |f| %>
+		      
+		      <div class="form-group">
+		        <%= f.label :section %>
+		        <%= f.text_field :section, id: 'section_textbox', class: 'form-control' %>
+		      </div>
+		      <div class="form-group"> 
+		        <%= f.submit 'Add Section', :class => 'btn btn-primary' %>
+
+		      </div>
+		      
+		 <% end %>
+	</div>
+
+	<div class="row" id="testajax">
+	
+            <% if @sections %>
+            
+				<table class="table" id="sectionstable">
+					<tbody>
+						<tr> 
+							<th> Section </th>
+							<th> Actions </th>
+						</tr>
+					</tbody>
+					<% if @sections.count == 0 %>
+						<tr id="emptyrow"><td colspan="2">No Sections Added yet</tr>
+					<% end %>
+				 	<% @sections.each do |s| %>
+				 		<%= render partial: "showform", locals: {s: s} %>
+                		
+               		<% end %>
+           		</table>
+            <% end %>
+          </div>
+</div>
+
+ 

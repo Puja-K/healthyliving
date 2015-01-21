@@ -1,0 +1,14 @@
+<div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <% if @section %>
+                <li><%= link_to "Curriculum", new_course_section_path(@section.course_id)%></li>
+            <% else %>
+                <li><a href="#" onclick="return false" style="color: #666; font-weight: bold">Curriculum</a></li>
+            <% end %>
+            <li><a href="#">Course Summary</a></li>
+            <li><%= link_to "Additional Info"%></li>
+            
+          </ul>
+          
+        </div>

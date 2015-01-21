@@ -1,0 +1,8 @@
+<h2> Price of the product </h2>
+
+<%= form_for(@product, :url => wizard_path, :method => :put) do |f| %>
+  <%= f.text_field :price, :placeholder => "Product price" %>
+  <%= f.submit 'Next', :class => 'btn btn-primary' %>
+<% end %>
+
+<%= link_to 'skip', next_wizard_path %>

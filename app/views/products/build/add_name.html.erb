@@ -1,0 +1,8 @@
+<h2> add Product  name </h2>
+<p>Please Fill in your product name!</p>
+<%= form_for(@product, :url => wizard_path, :method => :put) do |f| %>
+  <%= f.text_field :name, :placeholder => "Product name" %>
+  <%= f.submit 'Next', :class => 'btn btn-primary' %>
+<% end %>
+
+<%= link_to 'skip', next_wizard_path %>

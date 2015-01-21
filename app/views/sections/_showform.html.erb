@@ -1,0 +1,28 @@
+<tr>
+  	<td>
+  				        	
+  			<a href="#" class="editable" id="section" data-type="text" data-resource="section" data-pk ='<%=s.id%>' data-url="/courses/<%= s.course_id%>/sections/<%= s.id%>" > 
+  				  <%= s.section %>
+        </a>
+  	</td>
+  	<td>
+    		<button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#collapseExample_<%=s.id%>" aria-expanded="false" aria-controls="collapseExample_<%=s.id%>" onclick="$('#hiddenrow_<%=s.id%>').toggle();">
+    		    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+
+        <%= link_to course_section_path(s.course_id, s.id), remote: true, class: "delete_section", data: { confirm: 'Are you sure?' }, method: :delete do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        <% end %>
+        
+  			<span class="badge">5 lectures</span>
+  	</td>
+</tr>
+<tr style="display:none;" id="hiddenrow_<%=s.id%>">
+  	<td colspan="2">
+      	<div class="collapse" id="collapseExample_<%=s.id%>">
+      		<div class="well">
+      							    ...
+      		</div>
+    		</div>
+  	</td>
+</tr>

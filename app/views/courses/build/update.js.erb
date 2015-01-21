@@ -1,0 +1,15 @@
+<%if @course.errors.any? %>
+	$('<div id="error_explanation" class="alert alert-danger alert-dissmissable">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h4>
+
+          <ul>
+          <% @course.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>').insertBefore('div.remoteform h2')
+<%else %>
+	$('div#error_explanation').remove();
+	$('<p> <%=@course.sections.section%> added</p>').insertAfter('div#testajax');
+<% end %>

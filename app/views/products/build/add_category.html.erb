@@ -1,0 +1,19 @@
+<section class="content">
+  <div class="navigator">
+    <ol>
+      <li class="finished">Download
+      <li class="current">Task
+      <li class="unfinished">Upload
+      <li class="unfinished">Questionnaire
+    </ol>
+  </div>
+</section>
+
+<h2> Add Category</h2>
+<p>Please Fill in the Category!</p>
+<%= form_for(@product, :url => wizard_path, :method => :put) do |f| %>
+  <%= f.text_field :category, :placeholder => "Category it belongs to" %>
+  <%= f.submit 'Next', :class => 'btn btn-primary' %>
+<% end %>
+
+<%= link_to 'skip', next_wizard_path %>

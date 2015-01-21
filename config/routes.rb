@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  #resources :sections
+
   devise_for :users
   get 'pages/about'
 
@@ -6,7 +10,22 @@ Rails.application.routes.draw do
 
   resources :courses
 
-  resources :categories
+  #get '/courses/:course_id/sections/:id', to: 'sections#coursesections'
+  resources :courses do
+    #resources :build, controller: 'courses/build'
+      resources :sections
+    
+  end
+
+  #resources :categories
+
+  resources :categories do
+    resources :courses
+  end
+
+  #resources :products do
+   # resources :build, controller: 'products/build'
+  #end
 
   root 'courses#index'
 

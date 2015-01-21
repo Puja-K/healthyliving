@@ -28,7 +28,6 @@ class CoursesController < ApplicationController
    
     respond_to do |format|
       if @course.save
-        #format.html { redirect_to course_build_path(:id =>"courseinfo", :course_id => @course.id), notice: "Course Created" }
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
         format.json { render :show, status: :created, location: @course }
       else
@@ -70,6 +69,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :description, :level, :duration, :format, :image, :category_id, :status, :sections_attributes => [:course_id, :section, :_destroy])
+      params.require(:course).permit(:name, :description, :level, :duration, :format, :image, :category_id)
     end
 end

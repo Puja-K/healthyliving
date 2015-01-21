@@ -32,6 +32,13 @@ gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
 
 gem 'devise'
+gem 'simple_form', '~> 3.1.0.rc1'
+
+gem 'activeadmin', github: 'activeadmin'
+
+gem 'wicked'
+
+gem 'bootstrap-editable-rails'
 
 group :production do 
 	gem 'pg'

@@ -13,5 +13,40 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require bootstrap-editable
+//= require bootstrap-editable-rails
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+	$.fn.editable.defaults.mode = 'inline';
+	
+	$('.editable').editable();
+	//$('#sectionname').editable({
+    //type: 'text',
+    //title: 'Enter section',
+    //success: function(response, newValue) {
+      //  Section.set('sectionname', newValue); //update backbone model
+    //}
+});
+//	$('input[type=submit]').on('click', function(event){
+//		var form = $(this).parent('form');
+//		event.preventDefault();
+//		$.ajax({
+
+//			type: "PUT",
+//			url: form.attr('action'),
+//			data: form.serialize(),
+//			success: function(data){
+//				console.log("hi there")
+//			},
+//			error: function(data){
+//				console.log("there is some error")
+//			}, 
+//			dataType: 'JSON'
+//		});
+
+//	});
+
+
+//});

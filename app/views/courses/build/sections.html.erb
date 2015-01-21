@@ -1,0 +1,27 @@
+
+<div class="remoteform">
+  <h2> Add sections </h2>
+  <%= render 'sections/form' %>
+</div>
+<%= button_to "Next", @course, remote: true, :class => 'btn btn-primary' %>  
+    <div id="testajax">
+    </div>
+  
+  <table class="table table-hover">
+    
+    <% @course.sections.each_with_index do |s, i| %>
+      <% if i == @course.sections.size-2 %>
+          <tr id="last">
+            <td><%=s.section%></td>
+          </tr>
+      <% else%>
+          <tr>
+            <td><%=s.section%></td>
+          </tr>
+      <% end %>
+
+    <%end%>
+
+  </table>
+
+
