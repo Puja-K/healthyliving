@@ -70,10 +70,11 @@
                 <div role="tabpanel" class="tab-pane fade in active" id="coursecontent">
                     <h4> Course Curriculum </h4>
                               <ul>
-                                  
-                                <%@sections.each do |s| %>
-                                  <li> <%= s.section %> </li>
-                                <% end %>
+                                  <% if @sections %>
+                                    <%@sections.each do |s| %>
+                                      <li> <%= s.section %> </li>
+                                    <% end %>
+                                  <% end %>
                               </ul>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="instructorprofile">
