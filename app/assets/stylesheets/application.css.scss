@@ -1,15 +1,60 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-editable";
+@import "jquery.raty";
 
 body { 
 	
-background-color: #F5F5F1;
+//background-color: #F5F5F1;
 color: #333333;
 font-family: Arial, Helvetica, sans-serif;
-padding-top: 70px; 
+padding-top: 60px; 
 
 }
+
+
+.yt_video {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+
+  img {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+  }
+
+  .glyphicon-thumbs-down {margin-left: 20px;}
+}
+.glyphicon-heart {
+    
+    font-size: 30px;
+    color: red;
+}
+
+
+.h1,.h2,.h3,.h4,.h5,.h6 {
+color:#595454;
+text-decoration:none;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus{
+    color: white;
+    background-color: #0ebff9;
+    border: 1px solid #0ebff9;
+          border-bottom-color: transparent;  
+} 
+
+.tab-content {
+  border: 2px solid #0ebff9;
+
+}
+
+//.well {
+  //  background: rgb(219, 214, 214  );
+//}
 
 .navbar-default {
 	background-color: #0c6e8f;
@@ -29,6 +74,18 @@ font-weight: bold;
 color: #019205;
 	
 }
+
+.content {
+  padding: 0 0 0 105px; /* 75px being the width of the thumbnail + how much space you want to put between it and your text */
+  position: relative; /* So the thumbnail is relative to this */
+  margin : 20px;
+}
+
+  .content img {
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
 
 .center {
 	text-align: center;
@@ -106,4 +163,12 @@ color: #019205;
 }
 .main .page-header {
   margin-top: 0;
+}
+
+.jumbotron {
+    /*background-image: ;*/
+    h1, h2 {
+      font-family: guardian-egyptt, georgia, serif;
+    }
+
 }

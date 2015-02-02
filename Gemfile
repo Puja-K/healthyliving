@@ -39,6 +39,10 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'wicked'
 
 gem 'bootstrap-editable-rails'
+#rating system
+#gem 'ratyrate', :github => 'wazery/ratyrate'
+
+gem 'youtube_it'
 
 group :production do 
 	gem 'pg'

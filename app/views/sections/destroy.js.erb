@@ -1,3 +1,7 @@
-$('.delete_section').bind('ajax:success', function() {  
-        $(this).closest('tr').fadeOut();
+
+$("#deleteSectionModal").modal("hide")
+
+$('.yes_del').bind('ajax:success', function() { 
+		
+        $('tr#section_<%=@section.id%>').fadeOut();
 });  

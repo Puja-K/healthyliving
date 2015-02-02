@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @instructor.name %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @instructor.details %>
+</p>
+<%= image_tag @instructor.avatar.url %>
+<%= image_tag @instructor.avatar.url(:medium) %>
+<%= image_tag @instructor.avatar.url(:thumb) %>
+
+
+<%= link_to 'Edit', edit_instructor_path(@instructor) %> |
+<%= link_to 'Back', instructors_path %>

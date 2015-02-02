@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  
+
+ # resources :sections do
+  #  resources :videos, only: [:index, :new, :create]
+  #end
+  #get 'videos/index'
+
+  #post '/rate' => 'rater#create', :as => 'rate'
+  resources :instructors
+
+  #devise_for :admin_users, ActiveAdmin::Devise.config
+  #ActiveAdmin.routes(self)
   #resources :sections
 
   devise_for :users
@@ -8,13 +18,29 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
+  get 'home' => "enrollments#home"
+
+  #get 'addVideos' => "videos#addVideos"
+
   resources :courses
 
+  resources :courses do
+    resources :reviews, except: [:show, :index]
+  end
+
+  resources :courses do
+    resources :enrollments, only: [:new, :create]
+  end
+
   #get '/courses/:course_id/sections/:id', to: 'sections#coursesections'
+
+  resources :sections do
+        resources :videos, only: [:index, :new, :create]
+  end
+
   resources :courses do
     #resources :build, controller: 'courses/build'
-      resources :sections
-    
+      resources :sections 
   end
 
   #resources :categories

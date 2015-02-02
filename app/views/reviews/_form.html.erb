@@ -1,0 +1,23 @@
+<%= simple_form_for([@course,@review]) do |f| %>
+  <%= f.error_notification %>
+	<div id="star-rating">
+
+    </div>
+  <div class="form-inputs">
+    
+    <%= f.input :comment %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('#star-rating').raty({
+       path: '/assets/',
+      scoreName: 'review[rating]'
+
+  });
+  
+</script>

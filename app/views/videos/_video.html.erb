@@ -1,0 +1,21 @@
+
+  
+  <div id="addvideoform">
+  </div>
+
+  <ul class="list-group" id="listofvideos">
+    <% if s.videos.count == 0 %>
+        <li id="emptyli"><h4> No videos uploaded yet</h4>
+        <%= button_to "Start uploading now", new_section_video_path(s.id), :method => :get , remote: true, class:'btn btn-primary'%>
+        </li>
+    <%else%>
+        <%= button_to "Add more", new_section_video_path(s.id), :method => :get , remote: true, id: 'addmorebtn', class:'btn btn-primary'%>
+        
+        <% s.videos.each do |video| %>
+
+            <%= render partial: "/videos/buildvideolist", locals: {video: video} %>
+              
+        <% end %>
+    <% end%>
+  
+</ul>

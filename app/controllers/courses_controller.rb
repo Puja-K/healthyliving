@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-
+  
+  layout "courseDetails", only: [:show]
   # GET /courses
   # GET /courses.json
   def index
@@ -10,7 +11,19 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @sections = @course.sections
+    @reviews = Review.where(course_id: @course.id).order("created_at DESC")
+    if @reviews.blank?
+      @avg_rating = 0
+    else
+      @avg_rating = @reviews.average(:rating).round(2)
+    end
+    #@sections = Section.where("course_id = ?",  params[:id])
+
   end
+
+ 
+  
 
   # GET /courses/new
   def new
@@ -70,6 +83,14 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :description, :level, :duration, :format, :image, :category_id, :status, :sections_attributes => [:course_id, :section, :_destroy])
+      params.require(:course).permit(:name, :description, :level, :duration, :format, :image, :category_id, :instructor_id, :status, :sections_attributes => [:course_id, :section, :_destroy])
     end
+
+    def allcoursesbyinstructor
+      @course = Course.find(params[:id])
+      @courses = Course.where("instructor_id = ?", @course.instructor_id)
+
+    end
+
+    helper_method :allcoursesbyinstructor
 end

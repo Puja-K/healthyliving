@@ -1,0 +1,5 @@
+<% if video.errors.any? %>
+	<%= render 'shared/errors', object: video %>
+<%else %>
+	<li class="list-group-item"><%=video.link %></li>
+<%end%>

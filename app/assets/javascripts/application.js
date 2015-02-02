@@ -13,8 +13,11 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery.raty.js
 //= require bootstrap-editable
 //= require bootstrap-editable-rails
+//= require jquery.bind_with_delay
+//= require yt_player
 //= require turbolinks
 //= require_tree .
 
@@ -22,6 +25,14 @@ $(document).ready(function() {
 	$.fn.editable.defaults.mode = 'inline';
 	
 	$('.editable').editable();
+
+	$('#myDiv').children().attr('readonly', true);
+
+
+
+
+
+
 	//$('#sectionname').editable({
     //type: 'text',
     //title: 'Enter section',
@@ -29,6 +40,17 @@ $(document).ready(function() {
       //  Section.set('sectionname', newValue); //update backbone model
     //}
 });
+
+//function createVideoSection(id)
+  //{
+    
+    //var newRow = $('<tr id="hello"><td colspan="2"> hello </td> </tr>');
+    //var childOneOfTr = $('<td colspan="2"></td>');
+    //var childTwoOfTr = $('<div class="collapse" id="collapseExample_' +id +'></div>');
+    //var childThreeOfTr = $('<div class="well">hlhlhlhl</div>')
+    //$('#section_'+id).after( newRow );
+
+  //}
 //	$('input[type=submit]').on('click', function(event){
 //		var form = $(this).parent('form');
 //		event.preventDefault();

@@ -1,0 +1,51 @@
+<%= content_tag_for(:tr, s) do %>
+
+  	<td>
+  				        	
+  			<a href="#" class="editable" id="section" data-type="text" data-resource="section" data-pk ='<%=s.id%>' data-url="/courses/<%= s.course_id%>/sections/<%= s.id%>" > 
+  				  <%= s.section %>
+        </a>
+  	</td>
+  	<td>
+    		<button class="showvideobtn" type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#collapseExample_<%=s.id%>" aria-expanded="false" aria-controls="collapseExample_<%=s.id%>" onclick="$('#hiddenrow_<%=s.id%>').toggle();">
+    		    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+
+        <%= link_to "",  class: "delete_section", data: { toggle: "modal", target: "#deleteSectionModal"} do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        <% end %>
+        
+  			<span class="badge">5 lectures</span>
+  	</td>
+<% end %>
+<tr style="display:none;" id="hiddenrow_<%=s.id%>">
+  	<td colspan="2">
+      	<div class="collapse" id="collapseExample_<%=s.id%>">
+      		<div class="well">
+                   <%= render partial: '/videos/video', locals: {s: s} %>
+
+      		</div>
+    		</div>
+  	</td>
+</tr>
+
+
+
+<div class="modal fade" id="deleteSectionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Delete a Section</h4>
+      </div>
+      <div class="modal-body">
+        You are deleting <%=s.section%>. Are you sure?
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Yes, Delete This Section", course_section_path(s.course_id, s.id), method: :delete, remote: true, class: " yes_del btn btn-danger" %>
+        <%= link_to "Cancel", "#", class: "btn", data: { dismiss: "modal" } %>
+        
+      </div>
+    </div>
+  </div>
+</div>

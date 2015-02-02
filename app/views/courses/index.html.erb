@@ -1,16 +1,25 @@
-<h1>Listing courses</h1>
-
-
+<div class="jumbotron">
+  <h1>Discover your Culture.</h1>
+  <h2> Reach your soul !! Live healthy, spiritual, and a stress free life! </h2>
+</div>
+<div class="center">
   <div class="row">
     <% @courses.each do |course| %>
         <div class="col-md-3">
             <div class="thumbnail">
-                <%= image_tag course.image.url %> 
+                <%= link_to image_tag(course.image.url), course %> 
                 <div class="caption">
                   <h3><%= course.name %></h3>
                   <p><%=course.level%></p>
                   <p><%=course.duration%></p>
-                  <%= link_to 'Show', course, class:"btn btn-link" %>
+                 <hr>
+                <% if course.reviews.length > 0 %>
+                 <div class ="star-rating" data-score="<%=course.reviews.average(:rating).round(2)%>"></div><%= "(#{course.reviews.length})" %>
+                 <% else %>
+                    <div class ="star-rating" data-score="0"></div>
+                <% end %>
+                  
+              
                   <%= link_to 'Edit', edit_course_path(course), class:"btn btn-link" %>
                   <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-link"%>
                   
@@ -18,8 +27,8 @@
             </div>
           </div>
       <% end %>
-  </div> <! row ends-->
-
+  </div> 
+</div>
 
 
 
@@ -27,3 +36,16 @@
 <br>
 
 <%= link_to 'New Course', new_course_path %>
+
+<script type="text/javascript">
+  $('.star-rating').raty({
+      starType: 'i',
+      readOnly: true,
+      score: function() {
+              return $(this).attr('data-score');
+  }
+
+  })
+
+
+</script>

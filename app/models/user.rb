@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: true
+  has_many :enrollments
+  has_many :reviews, dependent: :destroy
+  #ratyrate_rater
 end

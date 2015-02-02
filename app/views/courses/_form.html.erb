@@ -23,12 +23,22 @@
     <%= f.label :category %><br>
     <%= f.collection_select :category_id, Category.order(:name), :id, :name , {:prompt => "Select Category" }, html_options = {class: 'form-control'} %>
   </div>
-
+<div class="form-group">
+    <%= f.label :instructor %><br>
+    <%= f.collection_select :instructor_id, Instructor.order(:name), :id, :name , {:prompt => "Select Instructor" }, html_options = {class: 'form-control'} %>
+  </div>
   <div class="form-group">
     <%= f.label :description %><br>
     <%= f.text_area :description,  class: 'form-control'%>
   </div>
-  
+  <div class="form-group">
+    <%= f.label :level %><br>
+    <%= f.text_field :level, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class: 'form-control' %>
+  </div>
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
   </div>

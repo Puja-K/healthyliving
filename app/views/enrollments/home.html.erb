@@ -1,0 +1,18 @@
+
+<div class="row">
+    <% @enrollments.each do |enrollment| %>
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <%= image_tag enrollment.course.image.url %> 
+                <div class="caption">
+                  <h3><%= enrollment.course.name %></h3>
+                  <p><%=enrollment.course.level%></p>
+                  <p><%=enrollment.course.duration%></p>
+                 
+                 
+                  
+                </div>
+            </div>
+          </div>
+      <% end %>
+  </div> 

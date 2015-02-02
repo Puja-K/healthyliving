@@ -1,5 +1,6 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /sections
   # GET /sections.json
@@ -15,6 +16,7 @@ class SectionsController < ApplicationController
   # GET all the sections for a course
   def show
     @sections = Section.where("course_id = ?",  params[:course_id])
+
   end
 
   # GET /sections/new
@@ -48,6 +50,10 @@ class SectionsController < ApplicationController
     end
   end
 
+def addVideo
+
+end
+
 
 def update
   #@section = Section.find(params[:id])
@@ -75,7 +81,8 @@ end
         #format.json { render json: @section.errors, status: :unprocessable_entity }
       #end
     #end
-  #end
+  #end]
+
 
   # DELETE /sections/1
   # DELETE /sections/1.json
@@ -96,6 +103,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
-      params.require(:section).permit(:section, :course_id)
+      params.require(:section).permit(:section, :course_id, videos_attributes: [:title, :link])
     end
 end
