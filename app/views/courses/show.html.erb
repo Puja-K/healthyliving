@@ -17,7 +17,13 @@
 
               </div>
 
-            <p> <%= "#{@reviews.length} reviews" %></p>
+            <p> 
+              <% if @reviews %>
+                <%= "#{@reviews.length} reviews" %>
+              <%else%>
+                No Reviews
+              <%end%>
+            </p>
             <% if user_signed_in? %>
                   <% if Enrollment.where(user_id: current_user.id , course_id: @course.id ).count == 0 %>
                     <div class="center">  

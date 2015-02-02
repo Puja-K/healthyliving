@@ -35,7 +35,7 @@ class ReviewsController < InheritedResources::Base
     end
 
 	def set_review
-      @course = Review.find(params[:id])
+      @review = Review.find(params[:id])
     end
     def set_course
       @course = Course.find(params[:course_id])
