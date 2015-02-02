@@ -39,7 +39,8 @@
 
 <script type="text/javascript">
   $('.star-rating').raty({
-      starType: 'i',
+      path: '/assets/',
+      hints: ['Not Bad', 'Good', 'Very Good', 'Excellent', 'Awesome'],
       readOnly: true,
       score: function() {
               return $(this).attr('data-score');

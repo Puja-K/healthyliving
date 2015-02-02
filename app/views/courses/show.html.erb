@@ -129,6 +129,7 @@
   $('.star-rating').raty({
        path: '/assets/',
       readOnly: true,
+      hints: ['Not Bad', 'Good', 'Very Good', 'Excellent', 'Awesome'],
       score: function() {
               return $(this).attr('data-score');
   }
