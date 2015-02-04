@@ -7,7 +7,7 @@
         </div>
         <div class="col-sm-6 col-md-6">
             <span class="h4"><%= @course.name %></span>
-            <p><%= @course.description %></p>
+            <p><%= h(@course.description).gsub(/\n/,'<br>').html_safe %></p>
             <p> <strong>Level:</strong><%= @course.level %></p>
             <p><strong>Duration:</strong><%= @course.duration %></p>
             <br>
