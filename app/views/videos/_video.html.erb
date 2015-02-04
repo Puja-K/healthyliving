@@ -1,9 +1,9 @@
 
   
-  <div id="addvideoform">
+  <div class="addvideoform">
   </div>
 
-  <ul class="list-group" id="listofvideos">
+  <ul class="list-group" class="listofvideos">
     <% if s.videos.count == 0 %>
         <li id="emptyli"><h4> No videos uploaded yet</h4>
         <%= button_to "Start uploading now", new_section_video_path(s.id), :method => :get , remote: true, class:'btn btn-primary'%>

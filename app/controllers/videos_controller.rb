@@ -9,7 +9,7 @@ class VideosController < ApplicationController
 
 	  	def new
 			@video = Video.new
-			
+			logger.debug "**********New Video: #{@video.attributes.inspect}"
 			respond_to do |format|
       		
 		        format.js {}

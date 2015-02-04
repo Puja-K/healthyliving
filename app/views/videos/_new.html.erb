@@ -1,6 +1,11 @@
 <%= simple_form_for(@video, url: section_videos_path, remote: true, :html => { :multipart => true }) do |f| %>
 	<div>
 		<%= render 'shared/errors', object: @video %>
+		<ul>
+        <% @video.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
       <%= f.input :title%>
 	   
 	    <%= f.input :link, required: true, hint:'A link to the video on YouTube.' %>
