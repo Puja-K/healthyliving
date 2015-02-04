@@ -1,0 +1,13 @@
+<h4> Course Curriculum </h4>  
+<ul class="list-group"> 
+  <% if @sections %>
+    <%@sections.each do |s| %>
+      <li class="list-group-item list-group-item-warning"><%=s.section%></li>
+      <% s.videos.each do |video| %>
+        <li class="list-group-item"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> <%= video.title %> 
+          <span class="badge"><%=video.duration%></span>
+        </li>
+      <%end%>
+    <% end %>
+  <% end %>
+</ul>

@@ -22,6 +22,9 @@ Rails.application.routes.draw do
 
   #get 'addVideos' => "videos#addVideos"
 
+  #get ':name', to: 'courses#classroom', as: :course
+
+
   resources :courses
 
   resources :courses do

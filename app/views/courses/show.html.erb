@@ -68,14 +68,7 @@
               <!-- Tab panes -->
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active" id="coursecontent">
-                    <h4> Course Curriculum </h4>
-                              <ul>
-                                  <% if @sections %>
-                                    <%@sections.each do |s| %>
-                                      <li> <%= s.section %> </li>
-                                    <% end %>
-                                  <% end %>
-                              </ul>
+                    <%=render 'coursecurriculum'%>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="instructorprofile">
                    <div class="center">
@@ -86,7 +79,7 @@
                         <% if @course.instructor %>
                             <%= image_tag @course.instructor.avatar.url(:thumb), class: "img-circle"%>
                             <p>
-                                <%=@course.instructor.details%>
+                                <%=h(@course.instructor.details).gsub(/\n/,'<br>').html_safe%>
                             </p>
                         <% end %>
                     </div>
