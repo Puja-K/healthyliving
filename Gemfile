@@ -34,7 +34,7 @@ gem "figaro"
 gem 'devise'
 gem 'simple_form', '~> 3.1.0.rc1'
 
-#gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', github: 'activeadmin'
 
 gem 'wicked'
 
