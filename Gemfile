@@ -44,11 +44,9 @@ gem 'bootstrap-editable-rails'
 
 gem 'youtube_it'
 
-gem 'rails_12factor', group: :production
-
 group :production do 
 	gem 'pg'
-	
+	gem 'rails_12factor'
 	
 end
 
