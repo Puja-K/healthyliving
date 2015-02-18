@@ -9,7 +9,6 @@ class VideosController < ApplicationController
 
 	  	def new
 			@video = Video.new
-			logger.debug "**********New Video: #{@video.attributes.inspect}"
 			respond_to do |format|
       		
 		        format.js {}
@@ -20,13 +19,10 @@ class VideosController < ApplicationController
 		def create
 			@video = Video.new(video_params)
 			@video.section_id = @section.id
-			logger.debug("*****Inside Create of VideosController*******")
 		   	respond_to do |format|
 		   		if @video.save
 		   			format.js{}
 		   		else
-					logger.debug("*****Inside else of Create VideosController*******")
-					logger.debug(@video.errors)
 					format.html { render :new }
         			format.json { render json: @video.errors, status: :unprocessable_entity }
         			format.js {}

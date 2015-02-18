@@ -1,0 +1,26 @@
+
+  <% if @shortlist && user_signed_in? %>
+    <div id="wishlisted">
+                <%= link_to course_shortlist_path(@course, @shortlist), method: :delete, remote: true do %>
+                    <span class="glyphicon glyphicon-heart-empty" aria-hidden="true">Wishlisted</span> 
+                <% end %>
+        </div>
+        <div id="addtowishlist" style="display:none">
+              <%= link_to course_shortlists_path(@course), method: :post, remote: true do %>
+                  <span class="glyphicon glyphicon-heart" aria-hidden="true"> <span id="wishlist">Add To Wishlist</span></span> 
+              <% end %>
+        </div>
+    
+    <% elsif @shortlist.nil? || user_signed_in! %>
+    <div id="wishlisted">
+    </div>
+        <div id="addtowishlist">
+              <%= link_to course_shortlists_path(@course), id: 'addtowishlist_btn', method: :post, remote: true do %>
+                  <span class="glyphicon glyphicon-heart" aria-hidden="true"> <span id="wishlist">Add To Wishlist</span></span> 
+              <% end %>
+        </div>
+
+    <% else %>
+    <% end %>
+
+    

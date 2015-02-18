@@ -38,10 +38,7 @@
                     <%= link_to "Enroll Now", course_enrollments_path(@course), method: :post, class: "btn btn-primary btn-lg"%>
                 </div>
             <% end %>
-            <%= link_to "Add to wishlist" do %>
-           <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 
-           <% end %>
-
+            <%= render '/shortlists/wishlist'%>
                         
         </div>
       </div>
@@ -120,6 +117,8 @@
       </div>
   </div>
 </div>
+
+<%= render 'loginModal' %>
 
 <script type="text/javascript">
   $('.star-rating').raty({

@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   has_many :enrollments
   has_many :reviews, dependent: :destroy
+  has_many :shortlists
   #ratyrate_rater
 end

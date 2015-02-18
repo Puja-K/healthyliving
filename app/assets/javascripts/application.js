@@ -28,6 +28,11 @@ $(document).ready(function() {
 
 	$('#myDiv').children().attr('readonly', true);
 
+  $.ajaxSetup({
+  headers: {
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+  }
+});
 
 
 

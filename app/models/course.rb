@@ -19,6 +19,7 @@ class Course < ActiveRecord::Base
 	  accepts_nested_attributes_for :sections, allow_destroy: true
 	  #ratyrate_rateable 'visual_effects'
 	  has_many :enrollments
+	  has_many :shortlists
 	  has_many :reviews
 	def active?
 	   status == 'active'

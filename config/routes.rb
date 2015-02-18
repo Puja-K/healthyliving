@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  
+
  # resources :sections do
   #  resources :videos, only: [:index, :new, :create]
   #end
@@ -9,23 +11,32 @@ Rails.application.routes.draw do
   #post '/rate' => 'rater#create', :as => 'rate'
   resources :instructors
 
+
   #devise_for :admin_users, ActiveAdmin::Devise.config
   #ActiveAdmin.routes(self)
   #resources :sections
-
-  devise_for :users
+  devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'} 
+  #devise_for :users
   get 'pages/about'
 
   get 'pages/contact'
 
   get 'home' => "enrollments#home"
 
+  #resources :wishlists
   #get 'addVideos' => "videos#addVideos"
 
   #get ':name', to: 'courses#classroom', as: :course
 
+  #post 'courses/:id/addToWishlist', to: 'shortlists#addToWishlist', as: :addToWishlist
+
+  #post 'courses/:id/removeFromWishlist', to: 'courses#removeFromWishlist', as: :removeFromWishlist
 
   resources :courses
+
+resources :courses do
+    resources :shortlists
+  end
 
   resources :courses do
     resources :reviews, except: [:show, :index]

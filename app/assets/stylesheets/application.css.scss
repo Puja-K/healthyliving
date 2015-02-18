@@ -12,6 +12,12 @@ padding-top: 60px;
 
 }
 
+#addtowishlist, #wishlisted {
+  width: 200px;
+  text-align: left;
+  background-color: #ccc;
+  padding: 5px 10px;
+}
 
 .yt_video {
   max-width: 320px;
@@ -28,10 +34,15 @@ padding-top: 60px;
 }
 .glyphicon-heart {
     
-    font-size: 30px;
+    font-size: 17px;
     color: red;
 }
 
+.glyphicon-heart-empty {
+    
+    font-size: 17px;
+    color: black;
+}
 
 .h1,.h2,.h3,.h4,.h5,.h6 {
 color:#595454;

@@ -1,6 +1,5 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-  
   layout "courseDetails", only: [:show]
   # GET /courses
   # GET /courses.json
@@ -19,11 +18,14 @@ class CoursesController < ApplicationController
       @avg_rating = @reviews.average(:rating).round(2)
     end
     #@sections = Section.where("course_id = ?",  params[:id])
+    #if user_signed_in? 
+      @shortlist = Shortlist.find_by(course_id: @course.id, user_id: current_user)
+    #else
+     # @shortlist = nil
+    #end
 
   end
 
- 
-  
 
   # GET /courses/new
   def new
