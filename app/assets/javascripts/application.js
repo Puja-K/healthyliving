@@ -34,8 +34,7 @@ $(document).ready(function() {
   }
 });
 
-
-
+ 
 
 
 	//$('#sectionname').editable({
@@ -45,6 +44,8 @@ $(document).ready(function() {
       //  Section.set('sectionname', newValue); //update backbone model
     //}
 });
+
+
 
 //function createVideoSection(id)
   //{

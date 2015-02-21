@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :classroom]
   layout "courseDetails", only: [:show]
   # GET /courses
   # GET /courses.json
@@ -7,6 +7,10 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
 
+  def classroom
+    @sections = @course.sections
+    
+  end
   # GET /courses/1
   # GET /courses/1.json
   def show

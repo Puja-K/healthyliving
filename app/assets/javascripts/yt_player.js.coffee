@@ -1,10 +1,16 @@
+
+
 jQuery ->
   $('.yt_preview').click -> makeVideoPlayer $(this).data('uid')
 
   # Initially the player is not loaded
   window.ytPlayerLoaded = false
 
-  
+  _run = ->
+    console.log("inside run")
+    # Runs as soon as Google API is loaded
+    $('.yt_preview').first().click()
+    return
 
   $(window).bindWithDelay('resize', ->
     player = $('#ytPlayer')
@@ -31,12 +37,11 @@ jQuery ->
           'onError': (errorCode) -> alert("We are sorry, but the following error occured: " + errorCode)
         }
       })
-
     else
       window.ytplayer.loadVideoById(video)
       window.ytplayer.pauseVideo()
     return
 
-  
+  google.setOnLoadCallback _run
 
   return

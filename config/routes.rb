@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   get 'home' => "enrollments#home"
 
+  get ':id/classroom', to: "courses#classroom", as: :classroom
   #resources :wishlists
   #get 'addVideos' => "videos#addVideos"
 
