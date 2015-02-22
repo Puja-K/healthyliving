@@ -38,7 +38,7 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'wicked'
 
-gem 'aws-sdk', '~> 2.0.27'
+gem 'aws-sdk', '< 2.0'
 
 gem 'bootstrap-editable-rails'
 #rating system
