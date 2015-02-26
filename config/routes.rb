@@ -33,9 +33,12 @@ Rails.application.routes.draw do
 
   #post 'courses/:id/removeFromWishlist', to: 'courses#removeFromWishlist', as: :removeFromWishlist
 
-  resources :courses
+  #resources :courses
 
 resources :courses do
+    collection do
+      get 'search'
+    end
     resources :shortlists
   end
 

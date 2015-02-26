@@ -46,6 +46,9 @@ gem 'bootstrap-editable-rails'
 
 gem 'youtube_it'
 
+#Search
+gem 'searchkick'
+
 group :production do 
 	gem 'pg'
 	gem 'rails_12factor'

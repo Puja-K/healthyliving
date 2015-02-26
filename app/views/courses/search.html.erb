@@ -1,0 +1,23 @@
+<div class="center">
+  <div class="row">
+    <% @courses.each do |course| %>
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <%= link_to image_tag(course.image.url), course %> 
+                <div class="caption">
+                  <h3><%= course.name %></h3>
+                  <p><%=course.level%></p>
+                  <p><%=course.duration%></p>
+                 <hr>
+                <% if course.reviews.length > 0 %>
+                 <div class ="star-rating" data-score="<%=course.reviews.average(:rating).round(2)%>"></div><%= "(#{course.reviews.length})" %>
+                 <% else %>
+                    <div class ="star-rating" data-score="0"></div>
+                <% end %>
+                  
+                </div>
+            </div>
+          </div>
+      <% end %>
+  </div> 
+</div>

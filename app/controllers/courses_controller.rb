@@ -11,6 +11,17 @@ class CoursesController < ApplicationController
     @sections = @course.sections
     
   end
+
+  #search
+  def search
+    if params[:search].present?
+      @courses = Course.search(params[:search])
+    else
+      @courses = Course.all
+    end
+  end
+
+
   # GET /courses/1
   # GET /courses/1.json
   def show
