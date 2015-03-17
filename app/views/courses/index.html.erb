@@ -14,7 +14,8 @@
                   <p><%=course.duration%></p>
                  <hr>
                 <% if course.reviews.length > 0 %>
-                 <div class ="star-rating" data-score="<%=course.reviews.average(:rating).round(2)%>"></div><%= "(#{course.reviews.length})" %>
+                  <% avg_rating = course.reviews.average(:rating).round(2) %>
+                 <div class ="star-rating" data-score="<%=avg_rating%>"></div><%= "(#{course.reviews.length})" %>
                  <% else %>
                     <div class ="star-rating" data-score="0"></div>
                 <% end %>
