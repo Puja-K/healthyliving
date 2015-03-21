@@ -20,5 +20,3 @@
 
 #Ignore files uploaded on localhost
 /public/system
-
-public/assets/**
