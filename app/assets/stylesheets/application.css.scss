@@ -69,7 +69,8 @@ text-decoration:none;
 //}
 
 .navbar-default {
-	background-color: #0c6e8f;
+	//background-color: #0c6e8f;
+	 background-color: #1cbbd7;
 }
 
 .navbar-default .navbar-brand {
@@ -185,3 +186,5 @@ color: white;
     }
 
 }
+
+@import "custom";

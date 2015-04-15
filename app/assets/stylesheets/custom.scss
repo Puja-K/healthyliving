@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif;}
+.body1{ width:100%; margin:0px; color:#ececec!important;}
+.header{ background:#1cbbd7;  }
+.subheader{ height:26px; float:right; display:inline-block; margin:10px;}
+.logo{ height:65px; padding:10px 0px 0px 20px; }
+.hr{ color:#fffe00; height:1px; margin-top:-3px; border:none; background-color:#fffe00;}
+.headerimg{ background-image:url(../images/yoga.png); width:254px; height:197px; display:inline-block; margin:0px;}
+.headerimg1{display:inline-block; margin:12px -5px; width:259px; height:194px; background-image:url(../images/buddhism.png); }
+.headerimg2{ background-image:url(../images/sikh.png); width:251px; height:208px; display:inline-block; margin:0px 0 19px -3px;}
+.headerimg3{ background-image:url(../images/ayur.png); width:229px; height:194px; display:inline-block; z-index:1px;
+position: absolute; margin:25px 0px 0px 0px;}
+.text{ font-size:39px; color:#FFF;}
+.row.no-gutter [class*='col-']:not(:first-child),.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right:0;
+  padding-left:0;
+}
+.no-gutter img { width:100%;} 
+.img{ margin-top:25px; padding-top:20px; }
+.img1{ margin-top:15px; padding-top:15px;}
+.img2{ margin-top:0px; }
+.img3{ margin-top:15px; padding-top:10px;}
+.box{ width:88px; height:24px; border:none; background-color:#fffe00; display:inline-block; margin:10px;}
+.get{ font-size:14px; color:#20abc4;  text-align:center; padding-top:2px;font-weight:100px;}
+.box1{ width:88px; height:24px; border:none; background-color:#e0f6fa; display:inline-block; margin:0px; }
+.text1{ font-size:21px; }
+.subhead{ height: 57px; background-color:#1c9bb1;}
+.shape{ margin:5px; margin-top:17px;}
+.shape1{ height:5px; background-color:#118296; width:35px;margin:5px;}
+.shape2{ height:5px; background-color:#118296; width:35px;margin:5px; }
+.text2{ font-size:14px; text-align:left; display:inline-block; clear:both; margin-left:5px; font-weight:600;}
+.box2{ width:243px; height:34px;  display:inline-block; border-radius:5px; background-color:#fff; margin-top:10px;}
+.box3{ width:103px; height:34px; float:right; border-radius:5px; background-color:#fffe00; margin-top:10px;}
+.search{ font-size:18px; color:#1c9bb1; text-align:center; padding:5px;}
+.image{background:url(../images/yogas.png) no-repeat center center;   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; min-height:440px; }
+.box4{ background-color: #fff; padding: 2%; margin-top: 25px; color:#666; font-size:16px; opacity:0.5; }
+.cricle{ border-radius:50%; width:44px; height:44px; background-color:#f1ff00; border:none; margin:15px; display:inline-block; }
+.play{ margin:10px; padding:5px; }
+.text2{ font-size:16px; color:#6666666; display:inline-block;}
+.image1{ background:url(../images/budd.png) no-repeat center center;-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; height:441px;}
+.text3{ color:#666; margin:10px; }
+.image2{ background-color:#118296; padding:25px;}
+.logo1{ margin:10px;}
+.image3{ background:url(../images/ayurved.png) no-repeat center center;-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; height:441px;}
+.text4{ color:#fff; margin:10px; }
+.text5{ font-size:16px; color:#fff; display:inline-block;}
+.text6{ color:#fff; margin:10px;padding-top:30px; }
+.pad{ padding:20px; margin:20px;}
+.image4{ background-color:#ececec; }
+.texts{ color:#666; margin:10px; text-align:center; }
+.box5{ background-color:#fff; border-radius:15px;  width:876px; color:#666; font-size:16px; padding:3%; margin:10px;}
+.jose{ color:#666; margin-left:30px; padding:1%; font-size:16px;}
+.start{ margin-left:25px; }
+.footer{ background-color:#252524; height:52px;}
+.ftexts{ margin:15px; text-align:center; }
