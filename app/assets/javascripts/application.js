@@ -14,6 +14,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery.raty.js
+//= require facebook
 //= require bootstrap-editable
 //= require bootstrap-editable-rails
 //= require jquery.bind_with_delay

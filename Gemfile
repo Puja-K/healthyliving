@@ -49,6 +49,10 @@ gem 'youtube_it'
 #Search
 gem 'searchkick'
 
+gem 'omniauth'
+
+gem 'omniauth-facebook'
+
 group :production do 
 	gem 'pg'
 	gem 'rails_12factor'
