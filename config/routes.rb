@@ -1,17 +1,10 @@
 Rails.application.routes.draw do
-  
-
-  
-
  # resources :sections do
   #  resources :videos, only: [:index, :new, :create]
   #end
   #get 'videos/index'
-
   #post '/rate' => 'rater#create', :as => 'rate'
   resources :instructors
-
-
   #devise_for :admin_users, ActiveAdmin::Devise.config
   #ActiveAdmin.routes(self)
   #resources :sections
@@ -71,7 +64,8 @@ resources :courses do
    # resources :build, controller: 'products/build'
   #end
 
-  root 'courses#index'
+  root 'pages#homepage'
+  #root 'courses#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,6 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 body{ margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif;}
+
+a, a:hover {text-decoration:none;}
 .body1{ width:100%; margin:0px; color:#ececec!important;}
 .header{ background:#1cbbd7; border-bottom:1px solid #fff;  }
 .cLogo { font-size:48px; font-family:impact; background:#c52666; padding:2px 16px; color:#fff; display:inline-block; width:auto;}
