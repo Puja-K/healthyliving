@@ -32,7 +32,7 @@
             		<div class="col-lg-5">-----------------</div>
             		<div class="col-lg-2">OR</div>
             		<div class="col-lg-5">-----------------</div>
-            		<div class="col-lg-6"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), id: "sign_in" %><br /></div>
+            		<div class="col-lg-6"><%= render partial: 'layouts/facebook_widget'%><br /></div>
             		<div class="col-lg-6"><button>Loging with Google</button></div>
             	</div>
          </div>
