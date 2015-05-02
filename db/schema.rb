@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 20150414194212) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status"
+    t.string   "status",      default: "new"
     t.string   "description"
   end
 
@@ -210,13 +210,6 @@ ActiveRecord::Schema.define(version: 20150414194212) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "section_id"
-  end
-
-  create_table "wishlists", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "course_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end
