@@ -38,7 +38,7 @@ position: absolute; margin:25px 0px 0px 0px;}
 .box2{ width:243px; height:34px;  display:inline-block; border-radius:5px; background-color:#fff; margin-top:10px;}
 .box3{ width:103px; height:34px; float:right; border-radius:5px; background-color:#c52666; margin-top:10px;}
 .search{ font-size:18px; color:#fff; text-align:center; padding:5px;}
-.image{background:image-url(../assets/yogas.png) no-repeat center center;   -webkit-background-size: cover;
+.image{background:url(../assets/yogas.png) no-repeat center center;   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; min-height:440px; }
@@ -46,14 +46,14 @@ position: absolute; margin:25px 0px 0px 0px;}
 .cricle{ border-radius:50%; width:44px; height:44px; background-color:#c52666; border:none; margin:15px; display:inline-block; }
 .play{ margin:8px 9px 9px 10px; padding:5px; color:#fff }
 .text2{ font-size:16px; color:#6666666; display:inline-block;}
-.image1{ background:image-url(../assets/budd.png) no-repeat center center;-webkit-background-size: cover;
+.image1{ background:url(../assets/budd.png) no-repeat center center;-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; height:441px;}
 .text3{ color:#666; margin:10px; }
 .image2{ background-color:#118296; padding:25px;}
 .logo1{ margin:10px;}
-.image3{ background:image-url(../assets/ayurved.png) no-repeat center center;-webkit-background-size: cover;
+.image3{ background:url(../assets/ayurved.png) no-repeat center center;-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; height:441px;}
