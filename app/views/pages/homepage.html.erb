@@ -1,62 +1,41 @@
 <div class="header">
 	<div class="container">
 		<div class="row no-gutter">
-			<div id="wrapper_bu" class="col-lg-12" style="min-height: 350px;">
-				<div id="bu1">
-					<p class="txt_Center txt_h1">
-						<%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
-					</p>
-				</div>
-				<div id="bu2">
-					<p class="txt_Center txt_h1">
-						<%= image_tag("buddhism.png", :alt => "buddhism", :class => "buddhism") %>
-					</p>
-				</div>
-				<div id="bu3">
-					<p class="txt_Center txt_h1">
-						<%= image_tag("sikh.png", :alt => "sikh", :class => "sikh") %>
-					</p>
-				</div>
-				<div id="bu4">
-					<p class="txt_Center txt_h1">
-						<%= image_tag("ayur.png", :alt => "ayur", :class => "ayur") %>
-					</p>
-				</div>
-				<div id="bu5">
-					<p class="txt_Center txt_h1">
-						<%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
-					</p>
-				</div>
-			</div>
-		</div>
-
+		<div id="wrapper_bu" class="col-lg-12" style="min-height: 350px;">
+<div id="bu1"><p class="txt_Center txt_h1"><%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %></p></div>
+<div id="bu2"><p class="txt_Center txt_h1"><%= image_tag("buddhism.png", :alt => "buddhism", :class => "buddhism") %></p></div>
+<div id="bu3"><p class="txt_Center txt_h1"><%= image_tag("sikh.png", :alt => "sikh", :class => "sikh") %></p></div>
+<div id="bu4"><p class="txt_Center txt_h1"><%= image_tag("ayur.png", :alt => "ayur", :class => "ayur") %></p></div>
+<div id="bu5"><p class="txt_Center txt_h1"><%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %></p></div>
+</div>
+</div>
+		
+		
 		<!--
 		<div class="row no-gutter">
-		<div class="col-lg-3 img">
-		<%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
-		</div>
-		<div class="col-lg-3 img1">
-		<%= image_tag("buddhism.png", :alt => "buddhism", :class => "buddhism") %>
-		</div>
-		<div class="col-lg-3 img2">
-		<%= image_tag("sikh.png", :alt => "sikh", :class => "sikh") %>
-		</div>
-		<div class="col-lg-3 img3">
-		<%= image_tag("ayur.png", :alt => "ayur", :class => "ayur") %>
-		</div>
-		</div>
-		-->
-
+					<div class="col-lg-3 img">
+						<%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
+					</div>
+					<div class="col-lg-3 img1">
+						<%= image_tag("buddhism.png", :alt => "buddhism", :class => "buddhism") %>
+					</div>
+					<div class="col-lg-3 img2">
+						<%= image_tag("sikh.png", :alt => "sikh", :class => "sikh") %>
+					</div>
+					<div class="col-lg-3 img3">
+						<%= image_tag("ayur.png", :alt => "ayur", :class => "ayur") %>
+					</div>
+				</div>
+				-->
+		
+		
+		
 		<div class="text">
 			Discover your Culture
-
-			<button class="btn btn-primary">
-				Get Started
-			</button>
-			<button class="btn btn-primary ml10">
-				Take a Tour
-			</button>
-
+		
+				<button class="btn btn-primary">Get Started</button>
+				<button class="btn btn-primary ml10">Take a Tour</button>
+				
 		</div>
 		<div class="text1 pb15">
 			Reach your soul !! Live healthy, spiritual, and a stress free life!
@@ -68,8 +47,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8">
+
 				<div class="text2 shape">
-					<a href="/categories"> <span class="glyphicon glyphicon-menu-hamburger"></span> Browse The Library </a>
+					<a href="#"> <span class="glyphicon glyphicon-menu-hamburger"></span> Browse The Library </a>
 				</div>
 			</div>
 			<div class="col-lg-4">
@@ -227,4 +207,13 @@
 		</div>
 	</div>
 </div>
+
+
+<!-- JOIN NOW START -->
+<%= render partial: 'layouts/modal_join_now'%>
+<!-- JOIN NOW END -->
+
+
+<!-- SIGN IN START -->
 <%= render partial: 'layouts/modal_sign_in'%>
+<!-- JOIN NOW END -->
