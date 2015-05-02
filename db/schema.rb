@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211133506) do
+ActiveRecord::Schema.define(version: 20150414194212) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -86,6 +86,16 @@ ActiveRecord::Schema.define(version: 20150211133506) do
     t.integer  "user_id"
   end
 
+  create_table "identities", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+
   create_table "instructors", force: true do |t|
     t.string   "name"
     t.text     "details"
@@ -111,7 +121,7 @@ ActiveRecord::Schema.define(version: 20150211133506) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status"
+    t.string   "status",      default: "new"
     t.string   "description"
   end
 
@@ -178,6 +188,12 @@ ActiveRecord::Schema.define(version: 20150211133506) do
     t.datetime "updated_at"
     t.string   "name"
     t.boolean  "admin",                  default: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -194,13 +210,6 @@ ActiveRecord::Schema.define(version: 20150211133506) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "section_id"
-  end
-
-  create_table "wishlists", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "course_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end

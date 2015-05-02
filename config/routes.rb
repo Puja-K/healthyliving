@@ -5,10 +5,17 @@ Rails.application.routes.draw do
   #get 'videos/index'
   #post '/rate' => 'rater#create', :as => 'rate'
   resources :instructors
-  #devise_for :admin_users, ActiveAdmin::Devise.config
-  #ActiveAdmin.routes(self)
-  #resources :sections
-  devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'} 
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+ 
+  #if facebook authentication fails then redirect to root
+  get 'auth/failure', to: redirect('/')
+
+ # devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'} 
+  devise_for :users, :controllers => {omniauth_callbacks: "users/omniauth_callbacks"} do
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  end
+  
+  
   #devise_for :users
   get 'pages/about'
 
