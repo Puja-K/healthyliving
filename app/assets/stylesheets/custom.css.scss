@@ -70,6 +70,19 @@ position: absolute; margin:25px 0px 0px 0px;}
 .ftexts{ margin:15px; text-align:center; }
 .btn-circle {width: 30px; height: 30px; text-align: center; padding: 6px 0; font-size: 12px; line-height: 1.42;  border-radius: 15px;}
 
+/*******COLORS********/
+.colorfff {color:#fff;}
+.colorLink{color:#00BCD4;}
+.colorc52666{color:#c52666};
+.bgc52666{background:#c52666};
+.bgec{background:#ECECEC;}
+.bgF6{background:#F6F6F6}
+.bgfff {background:#fff;}
+/*********borders***********/
+.brb5 {border-bottom:5px solid #00BCD4}
+.brb1 {border-bottom:1px solid #bbb}
+
+
 /*********HELPERS*********/
 
 .m0 { margin:0 !important;}
@@ -162,7 +175,8 @@ position: absolute; margin:25px 0px 0px 0px;}
 .tar {text-align:right;}
 .tal {text-align:left;}
 
-
+.font10{font-size:10px;}
+.font11{font-size:11px;}
 .font12{font-size:12px;}
 .font13{font-size:13px;}
 .font14{font-size:14px;}
@@ -179,9 +193,34 @@ position: absolute; margin:25px 0px 0px 0px;}
 .font25{font-size:25px;}
 .font26{font-size:26px;}
 
-.colorfff {color:#fff;}
-
 .btn-primary {background-color: #c52666;border-radius:0; color:#fff; border:1px solid darken(#c52666, 5%)}
 .modal-join {width:80%;}
+
+/************ login div*************/
+.logDiv .dropdown-toggle:hover, .logDiv .dropdown-toggle:focus,.logDiv .dropdown-toggle:active, .logDiv .dropdown-toggle:visited, .logDiv .dropdown-toggle:active {background:transparent;}
+.logDiv  .nav .open > a, .logDiv  .nav .open > a:hover, .logDiv  .nav .open > a:focus{background:transparent;}
+
+/************** course****************/
+.courseDetails {border:1px solid #eee;} 
+.courseDetails h5 {font-weight:bold;}
+.courseInfo {border:1px solid #eee; border-top:1px solid #fff;}
+.courseDetails img {max-width:100%;}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align:left;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  color:#fec90f;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
 
 
