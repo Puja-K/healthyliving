@@ -78,6 +78,7 @@ position: absolute; margin:25px 0px 0px 0px;}
 .bgec{background:#ECECEC;}
 .bgF6{background:#F6F6F6}
 .bgfff {background:#fff;}
+.bgLinkColor{background:#00BCD4;}
 /*********borders***********/
 .brb5 {border-bottom:5px solid #00BCD4}
 .brb1 {border-bottom:1px solid #bbb}
@@ -225,4 +226,13 @@ position: absolute; margin:25px 0px 0px 0px;}
 }
 
 
+.progress {
+    position: relative;
+}
 
+.progress span {
+    position: absolute;
+    display: block;
+    width: 85%;
+    color: #fff;
+ }
