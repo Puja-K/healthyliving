@@ -1,53 +1,246 @@
-<div class="jumbotron">
-  <h1>Discover your Culture.</h1>
-  <h2> Reach your soul !! Live healthy, spiritual, and a stress free life! </h2>
-</div>
-<div class="center">
-  <div class="row">
-    <% @courses.each do |course| %>
-        <div class="col-md-3">
-            <div class="thumbnail">
-                <%= link_to image_tag(course.image.url), course %> 
-                <div class="caption">
-                  <h3><%= course.name %></h3>
-                  <p><%=course.level%></p>
-                  <p><%=course.duration%></p>
-                 <hr>
-                <% if course.reviews.length > 0 %>
-                  <% avg_rating = course.reviews.average(:rating) %>
-                 <div class ="star-rating" data-score="<%=avg_rating%>"></div><%= "(#{course.reviews.length})" %>
-                 <% else %>
-                    <div class ="star-rating" data-score="0"></div>
-                <% end %>
-                  
-                <% if (user_signed_in? && current_user.admin) %>
-                    <%= link_to 'Edit', edit_course_path(course), class:"btn btn-link" %>
-                    <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-link"%>
-                <%end%>
-                  
-                </div>
+
+<%= render partial: 'layouts/hamburger_menu' %>
+
+<div class="container">
+  
+  
+    <div class="col-lg-4 bgec adHeight">
+      <div class="clearfix">
+        <div class="tac bgc52666 colorfff font16 mt10 pt10 pb10 brb5">
+         <a href="#" class="colorfff"> All Yoga Videos </a>
+        </div>
+        <ul class="list-unstyled bgfff mb10">
+          <li class="brb1 pt5 pb5 pl8"><div>Index One</div><span class="colorLink">test</span></li>
+          <li class="brb1 pt5 pb5 pl8"><div>Index One</div><span class="colorLink">test</span></li>
+          <li class="brb1 pt5 pb5 pl8"><div>Index One</div><span class="colorLink">test</span></li>
+          <li class="brb1 pt5 pb5 pl8"><div>Index One</div><span class="colorLink">test</span></li>
+          <li class="brb1 pt5 pb5 pl8"><div>Index One</div><span class="colorLink">test</span></li>
+          <li class="brb1 pt5 pb5 pl8"><div>Index One</div><span class="colorLink">test</span></li>
+          <li class="brb1 pt5 pb5 pl8"><div>Index One</div><span class="colorLink">test</span></li>
+        </ul>
+        
+        
+      </div>
+      
+      
+    </div>
+    <div class="col-lg-8 tcHeight">
+      <h3 class="mt10 colorc52666">Most Popular Courses</h3>
+      <div class="row mb15">
+        <div class="col-lg-4 pr5">
+          <div class="courseDetails bgF6">
+          <%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
+          <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
+          <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many yoga Practitoners!</div>
+          <div class="pl8 pr8 pt5 pb5"> <strong>Teacher</strong>: Bikram Chaudhary</div>
+          </div>
+          <div class="courseInfo bgF6 font12">
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="favDiv pl8 pt8">
+            <i class="fa fa-heart colorc52666"></i>Add to Favorite
+            </div>
+            </div>
+          <div class="col-lg-6">
+            <div class="classificationDiv pt8">
+            Beginner
             </div>
           </div>
-      <% end %>
-  </div> 
+          </div>
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="ratingDiv pl8 pt8 pb8">
+            <div class="rating">
+                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+              Rating
+            </div>  
+          </div>
+          <div class="col-lg-6">&nbsp; </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-4 pr5">
+          <div class="courseDetails bgF6">
+          <%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
+          <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
+          <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many yoga Practitoners!</div>
+          <div class="pl8 pr8 pt5 pb5"> <strong>Teacher</strong>: Bikram Chaudhary</div>
+          </div>
+          <div class="courseInfo bgF6 font12">
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="favDiv pl8 pt8">
+            <i class="fa fa-heart colorc52666"></i> Add to Favorite
+            </div>
+            </div>
+          <div class="col-lg-6">
+            <div class="classificationDiv pt8">
+            Beginner
+            </div>
+          </div>
+          </div>
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="ratingDiv pl8 pt8 pb8">
+            <div class="rating">
+                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+              Rating
+            </div>  
+          </div>
+          <div class="col-lg-6">&nbsp; </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-4 pr5">
+          <div class="courseDetails bgF6">
+          <%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
+          <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
+          <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many yoga Practitoners!</div>
+          <div class="pl8 pr8 pt5 pb5"> <strong>Teacher</strong>: Bikram Chaudhary</div>
+          </div>
+          <div class="courseInfo bgF6 font12">
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="favDiv pl8 pt8">
+            <i class="fa fa-heart colorc52666"></i> Add to Favorite
+            </div>
+            </div>
+          <div class="col-lg-6">
+            <div class="classificationDiv pt8">
+            Beginner
+            </div>
+          </div>
+          </div>
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="ratingDiv pl8 pt8 pb8">
+            <div class="rating">
+                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+              Rating
+            </div>  
+          </div>
+          <div class="col-lg-6">&nbsp; </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      
+        <div class="clearfix col-lg-12 brt1 p0">
+          <h3 class="mt15 mb15 colorLink">All Yoga Courses</h3>
+        </div>
+      <div class="row">
+        <div class="col-lg-4 pr5">
+          <div class="courseDetails bgF6">
+          <%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
+          <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
+          <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many yoga Practitoners!</div>
+          <div class="pl8 pr8 pt5 pb5"> <strong>Teacher</strong>: Bikram Chaudhary</div>
+          </div>
+          <div class="courseInfo bgF6 font12">
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="favDiv pl8 pt8">
+            <i class="fa fa-heart colorc52666"></i> Add to Favorite
+            </div>
+            </div>
+          <div class="col-lg-6">
+            <div class="classificationDiv pt8">
+            Beginner
+            </div>
+          </div>
+          </div>
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="ratingDiv pl8 pt8 pb8">
+            <div class="rating">
+                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+              Rating
+            </div>  
+          </div>
+          <div class="col-lg-6">&nbsp; </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-4 pr5">
+          <div class="courseDetails bgF6">
+          <%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
+          <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
+          <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many yoga Practitoners!</div>
+          <div class="pl8 pr8 pt5 pb5"> <strong>Teacher</strong>: Bikram Chaudhary</div>
+          </div>
+          <div class="courseInfo bgF6 font12">
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="favDiv pl8 pt8">
+            <i class="fa fa-heart colorc52666"></i> Add to Favorite
+            </div>
+            </div>
+          <div class="col-lg-6">
+            <div class="classificationDiv pt8">
+            Beginner
+            </div>
+          </div>
+          </div>
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="ratingDiv pl8 pt8 pb8">
+            <div class="rating">
+                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+              Rating
+            </div>  
+          </div>
+          <div class="col-lg-6">&nbsp; </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-4 pr5">
+          <div class="courseDetails bgF6">
+          <%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
+          <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
+          <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many yoga Practitoners!</div>
+          <div class="pl8 pr8 pt5 pb5"> <strong>Teacher</strong>: Bikram Chaudhary</div>
+          </div>
+          <div class="courseInfo bgF6 font12">
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="favDiv pl8 pt8">
+            <i class="fa fa-heart colorc52666"></i> Add to Favorite
+            </div>
+            </div>
+          <div class="col-lg-6">
+            <div class="classificationDiv pt8">
+            Beginner
+            </div>
+          </div>
+          </div>
+          <div class="row"> 
+          <div class="col-lg-6">
+            <div class="ratingDiv pl8 pt8 pb8">
+            <div class="rating">
+                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+              Rating
+            </div>  
+          </div>
+          <div class="col-lg-6">&nbsp; </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+  
+  
+  
+  
+  
+
+
+
 </div>
-
-<br>
-
-<% if (user_signed_in? && current_user.admin) %>
-  <%= link_to 'New Course', new_course_path %>
-<%end%>
-
-<script type="text/javascript">
-  $('.star-rating').raty({
-      path: 'https://s3.amazonaws.com/culturehoops/stars/',
-      hints: ['Not Bad', 'Good', 'Very Good', 'Excellent', 'Awesome'],
-      readOnly: true,
-      score: function() {
-              return $(this).attr('data-score');
-  }
-
-  })
-
-
-</script>

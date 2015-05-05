@@ -1,4 +1,4 @@
-class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def self.provides_callback_for(provider)
     class_eval %Q{
       def #{provider}
@@ -17,6 +17,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   [:twitter, :facebook, :linked_in].each do |provider|
     provides_callback_for provider
+  end
+
+  def passthru
+    render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
   end
 
   def after_sign_in_path_for(resource)

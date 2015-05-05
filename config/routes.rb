@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
-  
-
-  
-
  # resources :sections do
   #  resources :videos, only: [:index, :new, :create]
   #end
   #get 'videos/index'
-
   #post '/rate' => 'rater#create', :as => 'rate'
   resources :instructors
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
@@ -15,15 +10,18 @@ Rails.application.routes.draw do
   #if facebook authentication fails then redirect to root
   get 'auth/failure', to: redirect('/')
 
-  #devise_for :admin_users, ActiveAdmin::Devise.config
-  #ActiveAdmin.routes(self)
-  #resources :sections
  # devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'} 
-  devise_for :users, :controllers => {omniauth_callbacks: 'omniauth_callbacks'} 
+  devise_for :users, :controllers => {omniauth_callbacks: "users/omniauth_callbacks"} do
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  end
+  
+  
   #devise_for :users
   get 'pages/about'
 
   get 'pages/contact'
+  
+  get 'pages/categories'
 
   get 'home' => "enrollments#home"
 
@@ -75,7 +73,8 @@ resources :courses do
    # resources :build, controller: 'products/build'
   #end
 
-  root 'courses#index'
+  root 'pages#homepage'
+  #root 'courses#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

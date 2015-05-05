@@ -2,9 +2,10 @@
 @import "bootstrap";
 @import "bootstrap-editable";
 @import "jquery.raty";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 body { 
-	
 //background-color: #F5F5F1;
 color: #333333;
 font-family: Arial, Helvetica, sans-serif;
@@ -69,7 +70,8 @@ text-decoration:none;
 //}
 
 .navbar-default {
-	background-color: #0c6e8f;
+	//background-color: #0c6e8f;
+	 background-color: #1cbbd7;
 }
 
 .navbar-default .navbar-brand {
@@ -185,3 +187,6 @@ color: white;
     }
 
 }
+
+@import "custom";
+@import "slideshow";
