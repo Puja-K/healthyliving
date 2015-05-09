@@ -1,136 +1,416 @@
-<div class="well well-lg">
-      <div class="row">
-        <div class="col-sm-6 col-md-6">
-          <div class="thumbnail">
-            <%= image_tag @course.image.url%>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <span class="h4"><%= @course.name %></span>
-            <p><%= h(@course.description).gsub(/\n/,'<br>').html_safe %></p>
-            <p> <strong>Level:</strong><%= @course.level %></p>
-            <p><strong>Duration:</strong><%= @course.duration %></p>
-            <br>
-
-              <div class ="star-rating" data-score="<%=@avg_rating%>">
-
-
-              </div>
-          
-
-            <p> 
-              <% if @reviews %>
-                <%= "#{@reviews.length} reviews" %>
-              <%else%>
-                No Reviews
-              <%end%>
-            </p>
-            <% if user_signed_in? %>
-                  <% if Enrollment.where(user_id: current_user.id , course_id: @course.id ).count == 0 %>
-                    <div class="center">  
-                      <%= link_to "Enroll Now", course_enrollments_path(@course), method: :post, class: "btn btn-primary btn-lg"%>
-                    </div>
-                <!--  otherwise show resume course button-->
-                  <% end %>
-                  <br>
-                  <%= link_to "Write a Review", new_course_review_path(@course), class: "btn btn-primary" %>
-            <% else %>
-                <div class="center">  
-                    <%= link_to "Enroll Now", course_enrollments_path(@course), method: :post, class: "btn btn-primary btn-lg"%>
-                </div>
-            <% end %>
-            <%= render '/shortlists/wishlist'%>
-                        
-        </div>
-      </div>
-</div>
-
+<%= render partial: 'layouts/hamburger_menu' %>
 <div class="container">
-  <div class="row">
-      <div class="col-sm-9 col-md9">
-          <div role="tabpanel">
-
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#coursecontent" aria-controls="coursecontent" role="tab" data-toggle="tab">Course Content</a></li>
-                <li role="presentation"><a href="#instructorprofile" aria-controls="instructorprofile" role="tab" data-toggle="tab">Instructor Profile</a></li>
-                <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
-                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-              </ul>
-
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active" id="coursecontent">
-                    <%=render 'coursecurriculum'%>
+    <div class="row">
+        <div class="col-lg-12">
+            <button class="btn-primary btn-xs mb10 mt10"><i class="fa fa-arrow-left"></i> BACK TO DASHBOARD</button>
+            <div class="row">
+                <div class="col-lg-9 pr0">
+                    <%= image_tag("page4Header.png", :alt => "page4Header", :class => "page4Header") %>
                 </div>
-                <div role="tabpanel" class="tab-pane fade" id="instructorprofile">
-                   <div class="center">
-                      <h3> About </h3>
-                     
-                    </div>
-                    <div class="content">
-                        <% if @course.instructor %>
-                            <%= image_tag @course.instructor.avatar.url(:thumb), class: "img-circle"%>
-                            <p>
-                                <%=h(@course.instructor.details).gsub(/\n/,'<br>').html_safe%>
+                <div class="col-lg-3 bgF6 font11">
+                    <div class="row courseDetails">
+                        <div class="col-lg-12">
+                            <div class="font18 tac pb8 pt5">Course Detail</div>
+                            <p class="mb5">
+                                Having a smooth and successful taking off into Bakasana is challenging for many yoga practitioners!
                             </p>
-                        <% end %>
+                            <p class="mb5">The benefits of meditation are manifold. It is an essential practice for mental hygiene. A calm mind, good concentration, clarity of perception, improvement in communication, blossoming of skills and talents, an unshakeable inner strength, healing.</p>
+                            <p class="mb5">The ability to connect to an inner source of energy, relaxation, rejuvenation, and good luck are all natural results of meditating regularly.
+                            </p>
+                            <p class="mb5">The benefits of meditation are manifold. It is an essential practice for mental hygiene. A calm mind, good concentration, clarity of perception, improvement in communication, blossoming of skills and talents, an unshakeable inner strength, healing.</p>
+                            <div class="pb5"><strong>Teacher</strong>: Bikram Choudhury</div>
+                        </div>
+                    </div>
+                    <div class="row courseInfo bgF6 font12">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="favDiv pt5">
+                                        <i class="fa fa-heart colorc52666"></i> <span class="font10">Add to Favorite</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="classificationDiv pt5">
+                                        <span class="font10"> Beginner</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="ratingDiv pt5 pb5">
+                                        <div class="rating">
+                                            <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
+                                        </div>
+                                        <span class="font10"> 15 Reviews</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">&nbsp; </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 tac ptb3">
+                                    <button class="btn btn-primary btn-xs">Join This Course</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row mt10">
+                <div class="col-lg-9">
+                    <!--TABS STRUCTURE START-->
+                    <div role="tabpanel">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs bge2e2e2 font12 showCourseTab" role="tablist">
+                            <li role="presentation" class="active"><a href="#course" aria-controls="home" role="tab" data-toggle="tab">Couse Content</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Instructor Profile</a></li>
+                            <li role="presentation"><a href="#review" aria-controls="messages" role="tab" data-toggle="tab">Review</a></li>
+
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content bgF6 p0">
+                            <div role="tabpanel" class="tab-pane active" id="course">
+                                <!-- content start-->
+                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
+                                    <div class="col-lg-11">
+                                        <div class="row no-gutter m0">
+                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
+                                            <div class="col-lg-11">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
+                                </div>
+                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
+                                    <div class="col-lg-11">
+                                        <div class="row no-gutter m0">
+                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
+                                            <div class="col-lg-11">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
+                                </div>
+                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
+                                    <div class="col-lg-11">
+                                        <div class="row no-gutter m0">
+                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
+                                            <div class="col-lg-11">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
+                                </div>
+                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
+                                    <div class="col-lg-11">
+                                        <div class="row no-gutter m0">
+                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
+                                            <div class="col-lg-11">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
+                                </div>
+                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
+                                    <div class="col-lg-11">
+                                        <div class="row no-gutter m0">
+                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
+                                            <div class="col-lg-11">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
+                                </div>
+
+                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
+                                    <div class="col-lg-11">
+                                        <div class="row no-gutter m0">
+                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
+                                            <div class="col-lg-11">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
+                                </div>
+
+                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
+                                    <div class="col-lg-11">
+                                        <div class="row no-gutter m0">
+                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
+                                            <div class="col-lg-11">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
+                                </div>
+
+                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
+                                    <div class="col-lg-11">
+                                        <div class="row no-gutter m0">
+                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
+                                            <div class="col-lg-11">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
+                                </div>
+                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
+                                    <div class="col-lg-11">
+                                        <div class="row no-gutter m0">
+                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
+                                            <div class="col-lg-11">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
+                                </div>
+
+
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                            <div role="tabpanel" class="tab-pane" id="review">...</div>
+                        </div>
+
+                    </div>
+                    <!--TABS STRUCTURE END-->
+                </div>
+                <div class="col-lg-3 bgF6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3 class="font12 mt10 colorLink">Similar Courses</h3>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="courseDetails courseDetailsSideBar">
+                            <img alt="yoga" class="yoga" src="/assets/yoga.png">
+                        </div>
+                        <div class="courseInfo bgF6 font11">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="favDiv pl8 pt8">
+                                        <i class="fa fa-heart colorc52666"></i> Add to Favorite
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="classificationDiv pt8">
+                                        Beginner
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="ratingDiv pl8 pt8 pb8">
+                                        <div class="rating">
+                                            <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
+                                        </div>
+                                        Rating
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">&nbsp; </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="courseDetails courseDetailsSideBar bgF6">
+                            <img alt="yoga" class="yoga" src="/assets/yoga.png">
+                        </div>
+                        <div class="courseInfo bgF6 font11">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="favDiv pl8 pt8">
+                                        <i class="fa fa-heart colorc52666"></i> Add to Favorite
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="classificationDiv pt8">
+                                        Beginner
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="ratingDiv pl8 pt8 pb8">
+                                        <div class="rating">
+                                            <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
+                                        </div>
+                                        Rating
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">&nbsp; </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div role="tabpanel" class="tab-pane fade" id="reviews">
-                    
-                      <% if @reviews.blank?%>
-                          <h3> No Reviews yet! Be the first to write a review </h3>
-                      <% else %>
-                          <table class="table">
-                            <tbody>
-                              <% @reviews.each do |review| %>
-                            </tbody>
-                            <tr>
-                              <td>
-                                <div class ="star-rating" data-score="<%=review.rating%>">
+            </div>
 
+            <div class="clearfix col-lg-12 brt1 p0 mt15">
+                <h3 class="mt10 mb10 colorLink font16">Recommended for you</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 pr5 font11">
+                    <div class="courseDetails  bgF6">
+                        <img alt="yoga" class="yoga" src="/assets/yoga.png">
+                        <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
+
+                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many
+                            yoga Practitoners!
+                        </div>
+                        <div class="pl8 pr8 pt5 pb5"><strong>Teacher</strong>: Bikram Chaudhary</div>
+                    </div>
+                    <div class="courseInfo bgF6 font12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="favDiv pl8 pt8">
+                                    <i class="fa fa-heart colorc52666"></i> Add to Favorite
                                 </div>
-                                <p> <%= review.comment %> </p>
-                                <p> <%= review.user.name %></p>
-                              </td>
-                            </tr>
-                            <% end %>
-                          </table>
-                            
-                            
-                            
-                      <%end%>
-
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="classificationDiv pt8">
+                                    Beginner
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="ratingDiv pl8 pt8 pb8">
+                                    <div class="rating">
+                                        <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
+                                    </div>
+                                    Rating
+                                </div>
+                            </div>
+                            <div class="col-lg-6">&nbsp; </div>
+                        </div>
+                    </div>
                 </div>
-                <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
-              </div>
-          </div>
-      </div>
-      <div class="col-sm-3 col-md-3">
-          <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;<span>More Courses by this Instructor</span>
-          <% allcoursesbyinstructor.each do |c| %>
-                <hr>
-                <%= image_tag c.image.url(:thumb), class: "img-thumbnail"%>
-                <%=link_to c.name, course_path %>
-              
-          <% end %>
-      </div>
-  </div>
+                <div class="col-lg-3 pr5 font11">
+                    <div class="courseDetails bgF6">
+                        <img alt="yoga" class="yoga" src="/assets/yoga.png">
+                        <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
+
+                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many
+                            yoga Practitoners!
+                        </div>
+                        <div class="pl8 pr8 pt5 pb5"><strong>Teacher</strong>: Bikram Chaudhary</div>
+                    </div>
+                    <div class="courseInfo bgF6 font12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="favDiv pl8 pt8">
+                                    <i class="fa fa-heart colorc52666"></i> Add to Favorite
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="classificationDiv pt8">
+                                    Beginner
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="ratingDiv pl8 pt8 pb8">
+                                    <div class="rating">
+                                        <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
+                                    </div>
+                                    Rating
+                                </div>
+                            </div>
+                            <div class="col-lg-6">&nbsp; </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 pr5 font11">
+                    <div class="courseDetails bgF6">
+                        <img alt="yoga" class="yoga" src="/assets/yoga.png">
+                        <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
+
+                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many
+                            yoga Practitoners!
+                        </div>
+                        <div class="pl8 pr8 pt5 pb5"><strong>Teacher</strong>: Bikram Chaudhary</div>
+                    </div>
+                    <div class="courseInfo bgF6 font12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="favDiv pl8 pt8">
+                                    <i class="fa fa-heart colorc52666"></i> Add to Favorite
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="classificationDiv pt8">
+                                    Beginner
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="ratingDiv pl8 pt8 pb8">
+                                    <div class="rating">
+                                        <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
+                                    </div>
+                                    Rating
+                                </div>
+                            </div>
+                            <div class="col-lg-6">&nbsp; </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 pr5 font11">
+                    <div class="courseDetails bgF6">
+                        <img alt="yoga" class="yoga" src="/assets/yoga.png">
+                        <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
+
+                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many
+                            yoga Practitoners!
+                        </div>
+                        <div class="pl8 pr8 pt5 pb5"><strong>Teacher</strong>: Bikram Chaudhary</div>
+                    </div>
+                    <div class="courseInfo bgF6 font12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="favDiv pl8 pt8">
+                                    <i class="fa fa-heart colorc52666"></i> Add to Favorite
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="classificationDiv pt8">
+                                    Beginner
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="ratingDiv pl8 pt8 pb8">
+                                    <div class="rating">
+                                        <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
+                                    </div>
+                                    Rating
+                                </div>
+                            </div>
+                            <div class="col-lg-6">&nbsp; </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 </div>
-
-<%= render 'loginModal' %>
-
-<script type="text/javascript">
-  $('.star-rating').raty({
-       path: 'https://s3.amazonaws.com/culturehoops/stars/',
-      readOnly: true,
-      hints: ['Not Bad', 'Good', 'Very Good', 'Excellent', 'Awesome'],
-      score: function() {
-              return $(this).attr('data-score');
-  }
-
-  });
-
-
-</script>

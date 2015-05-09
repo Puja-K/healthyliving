@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 body{ margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif;}
-
+img {max-width: 100%;}
 a, a:hover {text-decoration:none;}
 .body1{ width:100%; margin:0px; color:#ececec!important;}
 .header{ background:#1cbbd7; border-bottom:1px solid #fff;  }
@@ -15,10 +15,7 @@ a, a:hover {text-decoration:none;}
 .headerimg3{ background-image:url(../assets/ayur.png); width:229px; height:194px; display:inline-block; z-index:1px;
 position: absolute; margin:25px 0px 0px 0px;}
 .text{ font-size:39px; color:#FFF;}
-.row.no-gutter [class*='col-']:not(:first-child),.row.no-gutter [class*='col-']:not(:last-child) {
-  padding-right:0;
-  padding-left:0;
-}
+.row.no-gutter [class*='col-']:not(:first-child),.row.no-gutter [class*='col-']:not(:last-child) {padding-right:0;padding-left:0;}
 .no-gutter img { width:100%;} 
 .img{ margin-top:25px; padding-top:20px; }
 .img1{ margin-top:15px; padding-top:15px;}
@@ -53,10 +50,7 @@ position: absolute; margin:25px 0px 0px 0px;}
 .text3{ color:#666; margin:10px; }
 .image2{ background-color:#118296; padding:25px;}
 .logo1{ margin:10px;}
-.image3{ background:url(../assets/ayurved.png) no-repeat center center;-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; height:441px;}
+.image3{ background:url(../assets/ayurved.png) no-repeat center center;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height:441px;}
 .text4{ color:#fff; margin:10px; }
 .text5{ font-size:16px; color:#fff; display:inline-block;}
 .text6{ color:#fff; margin:10px;padding-top:30px; }
@@ -78,6 +72,7 @@ position: absolute; margin:25px 0px 0px 0px;}
 .bgec{background:#ECECEC;}
 .bgF6{background:#F6F6F6}
 .bgfff {background:#fff;}
+.bge2e2e2 { background: #e2e2e2}
 .bgLinkColor{background:#00BCD4;}
 /*********borders***********/
 .brb5 {border-bottom:5px solid #00BCD4}
@@ -236,3 +231,15 @@ position: absolute; margin:25px 0px 0px 0px;}
     width: 85%;
     color: #fff;
  }
+
+.tab-content { border: 0 none; padding: 10px 12px;}
+
+
+.courseDetailsSideBar img { width: 100%; max-height: 150px;}
+.showCourseTab li { border-right:1px solid #fff; }
+
+.showCourseTab > li > a:hover, .showCourseTab > li > a:focus, .showCourseTab li:hover {background:#0ebff9; color: #fff;}
+.showCourseTab li:hover a {color:#fff;}
+.showCourseTab li.active { border-radius:0; }
+.showCourseTab li a {color: #666; margin-right:0; border-radius: 0; }
+
