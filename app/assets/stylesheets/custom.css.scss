@@ -279,3 +279,5 @@ ul.listStyleColor  li { padding: 3px;}
 #join form, #login form, .model-brt1 {border-top:1px solid #00bcd4; margin-top: 8px; }
 #login form label, #join form label { font-weight: normal; font-size: 15px;}
 /*#join .modal-body .close {position: absolute;right: 12px; top: 12px;}*/
+.dropdown-menu {border-radius: 4px !important;}
+.dropdown-menu:after {position: absolute;top: -6px;right: 10px; display: inline-block; border-right: 6px solid transparent; border-bottom: 6px solid #ffffff;  border-left: 6px solid transparent; content: '';}
