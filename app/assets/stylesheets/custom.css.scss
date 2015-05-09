@@ -28,9 +28,11 @@ position: absolute; margin:25px 0px 0px 0px;}
 .subhead{ height: 57px; background-color:#1c9bb1;}
 .shape{ margin:5px; margin-top:17px;}
 .shape  a {color:#fff}
+.shape2 a span {color: #118296;}
 .shape  a:hover {color:#000}
-.shape1{ height:5px; background-color:#118296; width:35px;margin:5px;}
 .shape2{ height:5px; background-color:#118296; width:35px;margin:5px; }
+
+
 .text2{ font-size:14px; text-align:left; display:inline-block; clear:both; margin-left:5px; font-weight:600;}
 .box2{ width:243px; height:34px;  display:inline-block; border-radius:5px; background-color:#fff; margin-top:10px;}
 .box3{ width:103px; height:34px; float:right; border-radius:5px; background-color:#c52666; margin-top:10px;}
@@ -67,6 +69,7 @@ position: absolute; margin:25px 0px 0px 0px;}
 /*******COLORS********/
 .colorfff {color:#fff;}
 .colorLink{color:#00BCD4;}
+.colorLinkDark {color:#118296}
 .colorc52666{color:#c52666};
 .bgc52666{background:#c52666};
 .bgec{background:#ECECEC;}
