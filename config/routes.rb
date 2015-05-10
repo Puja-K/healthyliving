@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   #if facebook authentication fails then redirect to root
   get 'auth/failure', to: redirect('/')
 
+
  # devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'} 
   devise_for :users, :controllers => {omniauth_callbacks: "users/omniauth_callbacks"} do
     get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   end
   
+  get ':category_id/courses', to: "courses#byCategory", as: :coursesByCategory
   
   #devise_for :users
   get 'pages/about'

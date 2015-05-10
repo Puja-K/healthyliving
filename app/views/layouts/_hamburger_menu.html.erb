@@ -4,7 +4,9 @@
 			<div class="col-lg-8">
 
 				<div class="text2 shape">
-					<a href="/courses"> <span class="glyphicon glyphicon-menu-hamburger"></span> Browse The Library </a>
+					<%= link_to coursesByCategory_path(1.to_i) do%>
+						<span class="glyphicon glyphicon-menu-hamburger"></span> Browse The Library
+					<% end %>
 				</div>
 			</div>
 			<div class="col-lg-4">

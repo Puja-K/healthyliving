@@ -21,6 +21,10 @@ class CoursesController < ApplicationController
     end
   end
 
+   def byCategory
+      @courses = Course.where("category_id = ?", params[:category_id])
+      render :index
+   end
 
   # GET /courses/1
   # GET /courses/1.json
