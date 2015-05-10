@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-ruby "2.1.2"
-gem 'rails', '4.1.6'
+ruby "1.9.3"
+gem 'rails', '4.1.6'	
 
 # Use Bootstrap
 gem 'bootstrap-sass', '~> 3.3.1'
@@ -62,6 +62,8 @@ group :production do
 	gem 'rails_12factor'
 	
 end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 group :development, :test do
 	gem 'sqlite3'
