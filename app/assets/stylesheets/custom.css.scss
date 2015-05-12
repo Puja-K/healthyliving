@@ -282,19 +282,16 @@ ul.listStyleColor  li { padding: 3px;}
 .dropdown-menu {border-radius: 4px !important;}
 .dropdown-menu-caret:after {position: absolute;top: -6px;right: 10px; display: inline-block; border-right: 6px solid transparent; border-bottom: 6px solid #ffffff;  border-left: 6px solid transparent; content: '';}
 
-
-.dropdown-menu .sub-menu {
+.hamburgerDiv.open > .hamburgerMenu,.hamburgerMenu:hover {background: #ececec; color: #128296 !important; padding: 10px;}
+.dropdown-menu.menuDiv { border: 0 none; box-shadow: none; background: #ececec;}
+.dropdown-menu.menuDiv  li:hover, .dropdown-menu.menuDiv  li a:hover { background: #fff;}
+.dropdown-menu li:hover > .sub-menu {
   left: 100%;
   position: absolute;
   top: 0;
- visibility: hidden;
- margin-top: -1px;
+  visibility: hidden;
+   margin-top: -1px;
+  display: block;
 }
+.hamburgerMenu:hover .dropdown-menu{background: #ececec;}
 
-.dropdown-menu li:hover .sub-menu {
-  visibility: visible;
-}
-//
-//.dropdown:hover .dropdown-menu {
-//  display: block;
-//}
