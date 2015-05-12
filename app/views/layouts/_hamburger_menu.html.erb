@@ -2,10 +2,29 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8">
-				<div class="shape">
-					<%= link_to coursesByCategory_path(1.to_i) do%>
-						<span class="glyphicon glyphicon-menu-hamburger colorLinkDark"></span> Browse The Library
-					<% end %>
+				<div class="shape dropdown">
+					<!--<%= link_to coursesByCategory_path(1.to_i),class: "dropdown-toggle", id:"browLib"  do%>-->
+						<!--<span class="glyphicon glyphicon-menu-hamburger colorLinkDark"></span> Browse The Library-->
+					<!--<% end %>-->
+					<a href="#" data-toggle="dropdown" class="dropdown-toggle" id="browLib"><span class="glyphicon glyphicon-menu-hamburger colorLinkDark"></span> Browse The Library</a>
+					<ul class="dropdown-menu" id="menu1">
+						<li>
+							<a href="#">2-level Menu <i class="icon-arrow-right"></i></a>
+							<ul class="dropdown-menu sub-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li class="nav-header">Nav header</li>
+								<li><a href="#">Separated link</a></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</UL>
 				</div>
 			</div>
 			<div class="col-lg-4">

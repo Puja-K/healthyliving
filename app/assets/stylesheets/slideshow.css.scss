@@ -1,149 +1,225 @@
+/*
+Item Name: jQuery Carousel Evolution
+Author: Mapalla
+Author URI: http://codecanyon.net/user/Mapalla
+Version: 1.0
+*/
 
+/* _______________________________________________ */
 
-#wrapper_bu {
-  position: relative;
-  width: 100%;
-  height: 100%;
+/* CONTAINER */
+/* _______________________________________________ */
+
+.carousel
+{
+  position :relative ;
+  margin :0 auto;
+  width :100%;
+  height :auto;
+  border :none;
+  overflow : visible ;
 }
 
+/* _______________________________________________ */
 
-//.txt_Center { margin: 0% 13% 0% 13% }
-//.txt_h1 { font-size: 2em }
-//.holder_bu { cursor: pointer }
-//.holder_bu_awayL1 {
-//  position: absolute;
-//  top: 30%;
-//  left: 10%;
-//  width: 30%;
-//  height: 50%;
-//  /*background-color: rgba(0,0,50,0.7);*/
-//  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-//  -moz-transition: width 1s, height 1s, top 1s, left 1s;
-//  -o-transition: width 1s, height 1s, top 1s, left 1s;
-//  -ms-transition: width 1s, height 1s, top 1s, left 1s;
-//  transition: width 1s, height 1s, top 1s, left 1s
-//}
-//
-//.holder_bu_awayL2 {
-//  position: absolute;
-//  top: 35%;
-//  left: 0%;
-//  width: 30%;
-//  height: 50%;
-//  /*background-color: rgba(0,0,50,0.5);*/
-//  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-//  -moz-transition: width 1s, height 1s, top 1s, left 1s;
-//  -o-transition: width 1s, height 1s, top 1s, left 1s;
-//  -ms-transition: width 1s, height 1s, top 1s, left 1s;
-//  transition: width 1s, height 1s, top 1s, left 1s
-//}
-//
-//.holder_bu_center {
-//  position: absolute;
-//  top: 12%;
-//  left: 30%;
-//  width: 46%;
-//  height: 90%;
-//  /*background-color: #37c;*/
-//  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-//  -moz-transition: width 1s, height 1s, top 1s, left 1s;
-//  -o-transition: width 1s, height 1s, top 1s, left 1s;
-//  -ms-transition: width 1s, height 1s, top 1s, left 1s;
-//  transition: width 1s, height 1s, top 1s, left 1s;
-//  z-index:1;
-//}
-//
-//.holder_bu_awayR1 {
-//  position: absolute;
-//  top: 35%;
-//  left: 75%;
-//  width: 30%;
-//  height: 50%;
-//  /*background-color: rgba(0,0,50,0.7);*/
-//  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-//  -moz-transition: width 1s, height 1s, top 1s, left 1s;
-//  -o-transition: width 1s, height 1s, top 1s, left 1s;
-//  -ms-transition: width 1s, height 1s, top 1s, left 1s;
-//  transition: width 1s, height 1s, top 1s, left 1s
-//}
-//
-//.holder_bu_awayR2 {
-//  position: absolute;
-//  top: 30%;
-//  left: 65%;
-//  width: 30%;
-//  height: 50%;
-//  /*background-color: rgba(0,0,50,0.5);*/
-//  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-//  -moz-transition: width 1s, height 1s, top 1s, left 1s;
-//  -o-transition: width 1s, height 1s, top 1s, left 1s;
-//  -ms-transition: width 1s, height 1s, top 1s, left 1s;
-//  transition: width 1s, height 1s, top 1s, left 1s
-//}
+/* SLIDES */
+/* _______________________________________________ */
 
+/* slide container */
+.carousel .slides
+{
+  margin :0;
+  padding :0;
+  border :none;
+  list-style :none;
+  position :relative ;
+  overflow :visible ;
+}
 
-/*.txt_Center {
-  margin: 0 13%;
+/* slide item */
+.carousel .slides .slideItem
+{
+  position :absolute ;
+  cursor :pointer ;
+  overflow : hidden;
+  padding :0;
+  margin :0;
+  border :none;
 }
-.txt_h1 {
-  font-size: 2em;
-}*/
-.holder_bu {
-  cursor: pointer;
+
+.carousel .slides .slideItem a
+{
+  display: block ;
+  text-decoration :none;
+  margin :0;
+  padding :0;
+  border :none;
+  outline :none;
 }
-.holder_bu_awayL1 {
-  position: absolute;
-  top: 20%;
-  left: 15%;
-  width: 30%;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -moz-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  -ms-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s;
+
+.carousel .slides .slideItem img
+{
+  margin :0;
+  padding :0;
+  border :none;
+  width :100%;
+  height :100%;
 }
-.holder_bu_awayL2 {
-  position: absolute;
-  top: 25%;
-  left: 1%;
-  width: 30%;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -moz-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  -ms-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s;
+
+/* _______________________________________________ */
+
+/* DIRECTION BUTTON */
+/* _______________________________________________ */
+
+.carousel .nextButton
+{
+  position :absolute ;
+  right :-25px;
+  top :40%;
+  width :auto;
+ cursor :pointer ;
+  z-index :9999;
 }
-.holder_bu_center {
-  position: absolute;
-  top: 6%;
-  left: 30%;
-  width: 42%;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -moz-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  -ms-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s;
-  z-index: 1;
+
+.carousel .prevButton
+{
+  position :absolute ;
+  left :-8px;
+  top :40%;
+  width :auto;
+  cursor :pointer ;
+  z-index :9999;
 }
-.holder_bu_awayR1 {
-  position: absolute;
-  top: 25%;
-  left: 70%;
-  width: 30%;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -moz-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  -ms-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s;
+
+/* _______________________________________________ */
+
+/* NAVIGATION BUTTON */
+/* _______________________________________________ */
+
+/* buttons container */
+.carousel .buttonNav
+{
+  position : relative ;
+  margin :0 auto;
+  z-index :999;
 }
-.holder_bu_awayR2 {
-  position: absolute;
-  top: 20%;
-  left: 58%;
-  width: 30%;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -moz-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  -ms-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s;
+
+/* numbers */
+.carousel .buttonNav .numbers
+{
+  position :relative ;
+  float :left ;
+  margin :5px;
+  color : #828282 ;
+  cursor :pointer ;
+  font-weight :bold ;
+  text-decoration :none;
+  font-size :1em;
+  font-family :Arial, Verdana ;
+}
+
+.carousel .buttonNav .numbers:hover
+{
+  color: #000;
+  text-decoration :underline;
+}
+
+.carousel .buttonNav .numberActive
+{
+  background : none;
+  color :#000;
+  cursor :default ;
+}
+
+/* bullets */
+.carousel .buttonNav .bullet
+{
+  position :relative ;
+  float :left ;
+  width :16px;
+  height :16px;
+  //background : url(images/Bullet-White.png) no-repeat center ;
+  margin :5px;
+  float :left ;
+  cursor :pointer ;
+}
+
+.carousel .buttonNav .bullet:hover
+{
+  //background : url(images/Bullet-Black.png) no-repeat center ;
+}
+
+.carousel .buttonNav .bulletActive
+{
+  //background : url(images/Bullet-Black.png) no-repeat center ;
+  //cursor :default ;
+}
+
+/* ____________________________________________________________ */
+
+/* VIDEO */
+/* ____________________________________________________________ */
+
+.carousel .slides .videoOverlay
+{
+  background :#000; /* play button */
+}
+
+.carousel .slides .spinner
+{
+  background : #000; /* video preloader */
+}
+
+/* _____________________________ *
+
+/* SHADOW */
+/* _____________________________ */
+
+.carousel .shadow
+{
+  width :100%;
+  height :82px;
+}
+
+.carousel .shadow .shadowLeft
+{
+  background :#000 url("images/shadowLeft.png") no-repeat;
+  width :100px;
+  height :82px;
+
+  /* fix png problems in ie */
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/shadowLeft.png, sizingmethod=scale)"; /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/shadowLeft.png, sizingmethod=scale);   /* IE6 & 7 */
+}
+
+.carousel .shadow .shadowMiddle
+{
+  height :82px;
+  background:#000 url("images/shadowTile.png") repeat-x;
+
+  /* fix png problems in ie */
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/shadowTile.png, sizingmethod=scale)"; /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/shadowTile.png, sizingmethod=scale);   /* IE6 & 7 */
+}
+
+.carousel .shadow .shadowRight
+{
+  width :100px;
+  height :82px;
+  background:url("images/shadowRight.png") no-repeat;
+
+  /* fix png problems in ie */
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/shadowRight.png, sizingmethod=scale)"; /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/shadowRight.png, sizingmethod=scale);   /* IE6 & 7 */
+}
+
+/* ____________________________________________________________ */
+
+/* REFLECTION GRADIENT */
+/* ____________________________________________________________ */
+
+/* gradient color for Opera */
+.carousel .gradient
+{
+  //background-image :url(scripts/gradient.svg);
 }
