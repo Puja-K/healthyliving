@@ -8,13 +8,21 @@
 					<!--<% end %>-->
 					<a href="#" data-toggle="dropdown" class="dropdown-toggle hamburgerMenu" id="browLib"><span class="glyphicon glyphicon-menu-hamburger colorLinkDark"></span> Browse The Library</a>
 					<ul class="dropdown-menu menuDiv" id="menu1">
-						<li>
-						<li><a href="#">Yoga</a></li>
-						<li class="divider"></li>
-							<ul class="dropdown-menu sub-menu">
-								<li>something</li>
-							</ul>
+
+						<li class="dropdown-submenu">
+							<a tabindex="-1" href="#">Yoga</a>
+							<ul class="dropdown-menu">
+								<li><a tabindex="-1" href="#">Second level</a></li>
+								<li class="dropdown-submenu">
+									<a href="#">Even More..</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">3rd level</a></li>
+										<li><a href="#">3rd level</a></li>
+									</ul>
+								</li>
+								</ul>
 						</li>
+						<li class="divider"></li>
 						<li><a href="#">Buddhism</a></li>
 						<li class="divider"></li>
 						<li><a href="#">Skishism</a></li>
