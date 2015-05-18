@@ -207,6 +207,7 @@ ul.listStyleColor  li { padding: 3px;}
 .courseDetails {border:1px solid #eee;} 
 .courseDetails h5 {font-weight:bold;}
 .courseInfo {border:1px solid #eee; border-top:1px solid #fff;}
+.courseDesc { overflow: hidden; text-overflow: ellipsis; max-height: 80px;}
 .courseDetails img {max-width:100%;}
 .rating {
   unicode-bidi: bidi-override;

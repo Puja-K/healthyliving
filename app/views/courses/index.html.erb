@@ -33,7 +33,7 @@
                 <%= link_to image_tag(course.image.url), course, :alt => "yoga", :class => "yoga" %>
               
               <h5 class="pl8 pr8"><%= course.name %></h5>
-              <div class="pl8 pr8"><%= course.description %></div>
+              <div class="pl8 pr8 courseDesc"><%= course.description %></div>
               <div class="pl8 pr8 pt5 pb5"> <strong>Teacher</strong>: <%= course.instructor.name%></div>
               </div>
               <div class="courseInfo bgF6 font12">
