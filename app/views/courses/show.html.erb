@@ -5,20 +5,17 @@
             <button class="btn-primary btn-xs mb10 mt10"><i class="fa fa-arrow-left"></i> BACK TO DASHBOARD</button>
             <div class="row">
                 <div class="col-lg-9 pr0">
-                    <%= image_tag("page4Header.png", :alt => "page4Header", :class => "page4Header") %>
-                </div>
+                    <%= image_tag @course.image.url, :alt => "page4Header", :class => "page4Header"%>
+               </div>
                 <div class="col-lg-3 bgF6 font11">
                     <div class="row courseDetails">
                         <div class="col-lg-12 font12">
-                            <div class="font18 tac pb8 pt5">Course Detail</div>
+                            <div class="font18 tac pb8 pt5"><%= @course.name %></div>
                             <p class="mb5">
-                                Having a smooth and successful taking off into Bakasana is challenging for many yoga practitioners!
+                                <%= h(@course.description).gsub(/\n/,'<br>').html_safe %>
                             </p>
-                            <p class="mb5">The benefits of meditation are manifold. It is an essential practice for mental hygiene. A calm mind, good concentration, clarity of perception, improvement in communication, blossoming of skills and talents, an unshakeable inner strength, healing.</p>
-                            <p class="mb5">The ability to connect to an inner source of energy, relaxation, rejuvenation, and good luck are all natural results of meditating regularly.
-                            </p>
-                            <p class="mb5">The benefits of meditation are manifold. It is an essential practice for mental hygiene. A calm mind, good concentration, clarity of perception, improvement in communication, blossoming of skills and talents, an unshakeable inner.</p>
-                            <div class="pb5"><strong>Teacher</strong>: Bikram Choudhury</div>
+                            
+                            <div class="pb5"><strong>Teacher</strong>: <%= @course.instructor.name %></div>
                         </div>
                     </div>
                     <div class="row courseInfo bgF6 font12">
@@ -31,24 +28,49 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="classificationDiv pt5">
-                                        <span class="font10"> Beginner</span>
+                                        <span class="font10"> <%= @course.level %></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="ratingDiv pt5 pb5">
-                                        <div class="rating">
-                                            <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
-                                        </div>
-                                        <span class="font10"> 15 Reviews</span>
+                                         <div class ="star-rating" data-score="<%=@avg_rating%>"></div>
+                                        <span class="font10">  
+                                            <% if @reviews %>
+                                                <%= "#{@reviews.length} reviews" %>
+                                            <%else%>
+                                                No Reviews
+                                            <%end%>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">&nbsp; </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 tac ptb3">
-                                    <button class="btn btn-primary btn-xs">Join This Course</button>
+                                   
+
+                                         <% if user_signed_in? %>
+                                              <% if Enrollment.where(user_id: current_user.id , course_id: @course.id ).count == 0 %>
+                                                <div class="center">  
+                                                  <%= link_to "Join This Course", course_enrollments_path(@course), method: :post, class: "btn btn-primary btn-lg"%>
+                                                </div>
+                                            <!--  otherwise show resume course button-->
+                                                <% else %>
+                                                    <div class="center">  
+                                                        <%= button_to "Resume", class: "btn btn-primary btn-lg" %>
+                                                    </div> 
+                                                <% end %>
+                                                <br>
+                                                <%= link_to "Write a Review", new_course_review_path(@course), class: "btn btn-primary" %>
+                                         <% else %>
+                                            <!-- User not signed in -->
+                                            <div class="center">  
+                                                <%= link_to "Join This Course", course_enrollments_path(@course), method: :post, class: "btn btn-primary btn-lg"%>
+                                            </div>
+                                        <% end %>        
+
                                 </div>
                             </div>
                         </div>
@@ -414,3 +436,17 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+  $('.star-rating').raty({
+      path: 'https://s3.amazonaws.com/culturehoops/stars/',
+      hints: ['Not Bad', 'Good', 'Very Good', 'Excellent', 'Awesome'],
+      readOnly: true,
+      score: function() {
+              return $(this).attr('data-score');
+  }
+
+  })
+
+
+</script>
