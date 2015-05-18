@@ -298,7 +298,11 @@ ul.listStyleColor  li { padding: 3px;}
   background: #ececec;
   color: #128296 !important;
   padding: 1.3%;
+  text-decoration: none;
 }
+
+.hamburgerDiv.open a > .hamburgerMenu a { text-decoration: none;}
+
 
 .dropdown-menu {
   &.menuDiv {
