@@ -1,0 +1,22 @@
+ <% if @reviews.blank?%>
+                          <h3> No Reviews yet! Be the first to write a review </h3>
+                      <% else %>
+                          <table class="table">
+                            <tbody>
+                              <% @reviews.each do |review| %>
+                            </tbody>
+                            <tr>
+                              <td>
+                                <div class ="star-rating" data-score="<%=review.rating%>">
+
+                                </div>
+                                <p> <%= review.comment %> </p>
+                                <p> <%= review.user.name %></p>
+                              </td>
+                            </tr>
+                            <% end %>
+                          </table>
+                            
+                            
+                            
+                      <%end%>

@@ -96,17 +96,9 @@
                         <div class="tab-content bgF6 p0">
                             <div role="tabpanel" class="tab-pane active" id="course">
                                 <!-- content start-->
-                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
-                                    <div class="col-lg-11">
-                                        <div class="row no-gutter m0">
-                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
-                                            <div class="col-lg-11">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
-                                </div>
+                                
+                                <!-- course content ends -->
+
                                 <div class="row no-gutter font11 brb1 pt8 pb8 m0">
                                     <div class="col-lg-11">
                                         <div class="row no-gutter m0">
@@ -202,8 +194,12 @@
 
 
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="profile">...</div>
-                            <div role="tabpanel" class="tab-pane" id="review">...</div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                <%= render 'instructor_profile' %>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="review">
+                                <%= render 'course_reviews' %>
+                            </div>
                         </div>
 
                     </div>
@@ -218,9 +214,13 @@
 
                     </div>
                     <div class="row">
+                        <% allcoursesbyinstructor.each do |c| %>
                         <div class="courseDetails courseDetailsSideBar">
-                            <img alt="yoga" class="yoga" src="/assets/yoga.png">
+                            <%= image_tag c.image.url(:thumb), class: "yoga", alt: "yoga"%>
+                            
                         </div>
+                        <h5 class="pl8 pr8"><%= c.name %></h5>
+                        <div class="pl8 pr8 courseDesc"><%= c.description %></div>
                         <div class="courseInfo bgF6 font11">
                             <div class="row">
                                 <div class="col-lg-6">
@@ -230,53 +230,29 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="classificationDiv pt8">
-                                        Beginner
+                                        <%=c.level%>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="ratingDiv pl8 pt8 pb8">
-                                        <div class="rating">
-                                            <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
-                                        </div>
-                                        Rating
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">&nbsp; </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="courseDetails courseDetailsSideBar bgF6">
-                            <img alt="yoga" class="yoga" src="/assets/yoga.png">
-                        </div>
-                        <div class="courseInfo bgF6 font11">
-                            <div class="row">
                                 <div class="col-lg-6">
-                                    <div class="favDiv pl8 pt8">
-                                        <i class="fa fa-heart colorc52666"></i> Add to Favorite
+                                    <div class="ratingDiv pt5 pb5">
+                                         <div class ="star-rating" data-score="<%=@avg_rating%>"></div>
+                                        <span class="font10">  
+                                            <% if c.reviews %>
+                                                <%= "#{c.reviews.length} reviews" %>
+                                            <%else%>
+                                                No Reviews
+                                            <%end%>
+                                        </span>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="classificationDiv pt8">
-                                        Beginner
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="ratingDiv pl8 pt8 pb8">
-                                        <div class="rating">
-                                            <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
-                                        </div>
-                                        Rating
-                                    </div>
+                                   
                                 </div>
                                 <div class="col-lg-6">&nbsp; </div>
                             </div>
                         </div>
+                        <%end %>
                     </div>
                 </div>
             </div>

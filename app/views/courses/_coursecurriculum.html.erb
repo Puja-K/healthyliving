@@ -1,3 +1,19 @@
+
+<% if @sections %>
+  <%@sections.each do |s| %>
+      <div class="row no-gutter font11 brb1 pt8 pb8 m0">
+          <div class="col-lg-11">
+              <div class="row no-gutter m0">
+                  <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
+                      <div class="col-lg-11">
+                        
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
+                      </div>
+              </div>
+          </div>
+          <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
+      </div>
+<%end%>
 <h4> Course Curriculum </h4>  
 <ul class="list-group"> 
   <% if @sections %>
