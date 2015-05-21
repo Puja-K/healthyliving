@@ -59,11 +59,11 @@
                                             <!--  otherwise show resume course button-->
                                                 <% else %>
                                                     <div class="center">  
-                                                        <%= link_to "Resume", class: "btn btn-sm btn-primary" %>
+                                                        <%= link_to "Resume", new_course_review_path(@course),  class: "btn btn-sm btn-primary" %>
                                                     </div> 
                                                 <% end %>
                                                 <br>
-                                                <%= link_to "Write a Review", new_course_review_path(@course), class: "btn btn-sm btn-primary" %>
+                                                <%= link_to "Write a Review", new_course_review_path(@course), class: "btn btn-sm btn-primary mb10" %>
                                          <% else %>
                                             <!-- User not signed in -->
                                             <div class="center">  
@@ -429,7 +429,7 @@
   });
 
     $(window).load(function(){
-        $(".imgHeight").height($("img.page4Header").height());
+        $(".imgHeight").height($("img.page4Header").height()-10);
     });
 
 
