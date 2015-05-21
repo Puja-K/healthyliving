@@ -195,6 +195,7 @@ ul.listStyleColor  li { padding: 3px;}
 .font24{font-size:24px;}
 .font25{font-size:25px;}
 .font26{font-size:26px;}
+.bold { font-weight: bold}
 
 .btn-primary {background-color: #c52666;border-radius:0; color:#fff; border:1px solid darken(#c52666, 5%)}
 .modal-join {width:70%;}
@@ -207,7 +208,7 @@ ul.listStyleColor  li { padding: 3px;}
 .courseDetails {border:1px solid #eee;} 
 .courseDetails h5 {font-weight:bold;}
 .courseInfo {border:1px solid #eee; border-top:1px solid #fff;}
-.courseDesc { overflow: hidden; text-overflow: ellipsis; max-height: 80px;}
+.courseDesc { overflow: hidden; text-overflow: ellipsis; max-height: 80px; font-size: 12px;}
 .courseDetails img {max-width:100%;}
 .rating {
   unicode-bidi: bidi-override;
@@ -383,3 +384,24 @@ ul.listStyleColor  li { padding: 3px;}
 
   }
 }
+
+
+/**************************/
+
+
+.courseContent {
+    padding-bottom: 10px;
+  .list-group {
+    .list-group-item { border: 0; border-radius: 0;
+    }
+    ul.listVideo { background: transparent;border-bottom: 1px solid #dce9dd;
+      li.list-group-item {
+        background: transparent; padding-left: 3.5%;
+      }
+    }
+  }
+  .badge { background: transparent; color: #333;}
+}
+
+.favDiv  .fa-hart { font-size: 20px;}
+
