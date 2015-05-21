@@ -11,7 +11,7 @@
                     <div class="row courseDetails">
                         <div class="col-lg-12 font12">
                             <div class="font18 tac pb8 pt5"><%= @course.name %></div>
-                            <p class="mb5">
+                            <p class="mb5 courseDescLong">
                                 <%= h(@course.description).gsub(/\n/,'<br>').html_safe %>
                             </p>
                             
@@ -59,7 +59,7 @@
                                             <!--  otherwise show resume course button-->
                                                 <% else %>
                                                     <div class="center">  
-                                                        <%= button_to "Resume",  :class => 'btn btn-primary btn-lg' %>
+                                                        <%= link_to "Resume", class: "btn btn-sm btn-primary" %>
                                                     </div> 
                                                 <% end %>
                                                 <br>
