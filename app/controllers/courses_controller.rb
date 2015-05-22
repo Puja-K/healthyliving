@@ -22,7 +22,7 @@ class CoursesController < ApplicationController
   end
 
    def byCategory
-      @courses = Course.where("category_id = ?", params[:category_id])
+      @courses = Course.where("category_id = ?", params[:category_id]).paginate(:page => params[:page], :per_page => 3)
       render :index
    end
 
