@@ -2,8 +2,6 @@
 <%= render partial: 'layouts/hamburger_menu' %>
 
 <div class="container">
-  
-  
     <div class="col-lg-4 bgec adHeight">
       <div class="clearfix">
         <div class="tac bgc52666 colorfff font16 mt10 pt10 pb10 brb5">
@@ -28,16 +26,16 @@
       <h3 class="mt10 colorc52666">Most Popular Courses</h3>
       <div class="row mb15">
         <% @courses.each do |course| %>
-            <div class="col-lg-4 pr5">
-              <div class="courseDetails bgF6">
+            <div class="col-lg-4 pr5 mb10 mt10 courseBox">
+              <div class="courseDetails bgF6 ">
                 <%= link_to image_tag(course.image.url), course, :alt => "yoga", :class => "yoga" %>
-              
+
               <h5 class="pl8 pr8"><%= course.name %></h5>
               <div class="pl8 pr8 courseDesc"><%= course.description %></div>
               <div class="pl8 pr8 pt8 pb8 font12"> <strong>Teacher</strong>: <%= course.instructor.name%></div>
               </div>
               <div class="courseInfo bgF6 font12">
-              <div class="row"> 
+              <div class="row">
               <div class="col-lg-6">
                 <div class="favDiv pl8 pt8 font11">
                 <i class="fa fa-heart colorc52666"></i>Add to Favorite
@@ -49,29 +47,29 @@
                 </div>
               </div>
               </div>
-              <div class="row"> 
-              <div class="col-lg-6">
-                <div class="ratingDiv pl8 pt8 pb8">
+              <div class="row">
+              <div class="col-lg-12">
+                <div class="ratingDiv pl8 pt8 pb8 pull-left">
                 <div class="rating">
                     <% if course.reviews.length > 0 %>
                         <% avg_rating = course.reviews.average(:rating) %>
-                        <div class ="star-rating" data-score="<%=avg_rating%>"></div><%= "(#{course.reviews.length})" %>
+                        <div class ="star-rating pull-left mr8" data-score="<%=avg_rating%>"></div> <div class="color3 pull-left"><%= "(#{course.reviews.length})" %> Reviews </div>
                      <% else %>
                         <div class ="star-rating" data-score="0"></div>
                     <% end %>
-                 <span class="color3">Reviews </span>
+
                 </div>
 
-                </div>  
+                </div>
               </div>
-              <div class="col-lg-6">&nbsp; </div>
+
               </div>
               </div>
             </div>
         <%end %>
 
 
-        
+
       
         <div class="clearfix col-lg-12 brt1 p0">
           <h3 class="mt15 mb15 colorLink">All Yoga Courses</h3>
@@ -191,7 +189,6 @@
       score: function() {
               return $(this).attr('data-score');
   }
-
   })
 
 $(window).load(function(){

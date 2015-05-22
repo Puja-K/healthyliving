@@ -444,7 +444,7 @@
 		};
 		var initDirectionButton = function() {
 			var el = element;
-			el.append('<div class="nextButton"><i class="fa fa-arrow-right font20"></i></div><div class="prevButton"><i class="fa fa-arrow-left font20"></i></div>');
+			el.append('<div class="nextButton"><i class="fa fa-arrow-right font20 colorfff"></i></div><div class="prevButton"><i class="fa fa-arrow-left font20 colorfff"></i></div>');
 			el.children('.nextButton').bind('click', function(event) {
 				goTo(currentSlide + 1, true, false);
 			});
