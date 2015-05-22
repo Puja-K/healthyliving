@@ -37,27 +37,23 @@ position: absolute; margin:25px 0px 0px 0px;}
 .box2{ width:243px; height:34px;  display:inline-block; border-radius:5px; background-color:#fff; margin-top:10px;}
 .box3{ width:103px; height:34px; float:right; border-radius:5px; background-color:#c52666; margin-top:10px;}
 .search{ font-size:18px; color:#fff; text-align:center; padding:5px;}
-.image{background:url(../assets/yogas.png) no-repeat center center;   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; min-height:440px; }
+.yogaBg{background:url(../assets/yogas.png) no-repeat center center;   -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; min-height:440px; }
+.buddhismBg{ background:url(../assets/budd.png) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover; background-size: cover; height:441px;}
+.sikhismBg { background-color:#118296; padding:25px;}
+.ayurvedBg { background:url(../assets/ayurved.png) no-repeat center center;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height:441px;}
+.clientBg{ background-color:#ececec; }
+
 .box4{ background-color: #fff; padding: 2%; margin-top: 25px; color:#666; font-size:16px; opacity:0.9;box-shadow: 3px 3px 5px #666; }
 .cricle{ border-radius:50%; width:44px; height:44px; background-color:#c52666; border:none; margin:15px; display:inline-block; }
 .play{ margin:8px 9px 9px 10px; padding:5px; color:#fff }
 .text2{ font-size:16px; color:#6666666; display:inline-block;}
-.image1{ background:url(../assets/budd.png) no-repeat center center;-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; height:441px;}
+
 .text3{ color:#666; margin:10px; }
-.image2{ background-color:#118296; padding:25px;}
 .logo1{ margin:10px;}
-.image3{ background:url(../assets/ayurved.png) no-repeat center center;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height:441px;}
 .text4{ color:#fff; margin:10px; }
 .text5{ font-size:16px; color:#fff; display:inline-block;}
 .text6{ color:#fff; margin:10px;padding-top:30px; }
 .pad{ padding:20px; margin:20px;}
-.image4{ background-color:#ececec; }
 .texts{ color:#666; margin:10px; text-align:center; }
 .box5{ background-color:#fff; border-radius:15px;  width:80%; color:#666; font-size:16px; padding:3%; margin:10px;}
 .jose{ color:#666; margin-left:30px; padding:1%; font-size:16px;}
