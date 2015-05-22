@@ -149,7 +149,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h3 class="font12 mt10 colorLink">Similar Courses</h3>
-
+                            <%= allcoursesbyinstructor.count %>
                         </div>
 
                     </div>
@@ -195,6 +195,7 @@
                         </div>
                         <%end %>
                     </div>
+                    <%= will_paginate allcoursesbyinstructor, renderer: BootstrapPagination::Rails %>
                 </div>
             </div>
 

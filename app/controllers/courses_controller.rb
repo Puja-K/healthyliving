@@ -22,8 +22,14 @@ class CoursesController < ApplicationController
   end
 
    def byCategory
-      @courses = Course.where("category_id = ?", params[:category_id])
-      render :index
+    sleep 2
+      @courses = Course.where("category_id = ?", params[:category_id]).paginate(:page => params[:page], :per_page => 6)
+      respond_to do |format|
+        format.html {render 'byCategory'}
+        format.json { render json: @courses }
+        format.js
+      end
+      #render :index
    end
 
   # GET /courses/1
@@ -109,7 +115,7 @@ class CoursesController < ApplicationController
 
     def allcoursesbyinstructor
       @course = Course.find(params[:id])
-      @courses = Course.where("instructor_id = ?", @course.instructor_id)
+      @courses = Course.where("instructor_id = ?", @course.instructor_id).paginate(:page => params[:page], :per_page => 3)
 
     end
 
