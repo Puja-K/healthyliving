@@ -1,0 +1,43 @@
+<% @courses.each do |course| %>
+            <div class="col-lg-4 pr5">
+              <div class="courseDetails bgF6">
+                <%= link_to image_tag(course.image.url), course, :alt => "yoga", :class => "yoga" %>
+              
+              <h5 class="pl8 pr8"><%= course.name %></h5>
+              <div class="pl8 pr8 courseDesc"><%= course.description %></div>
+              <div class="pl8 pr8 pt8 pb8 font12"> <strong>Teacher</strong>: <%= course.instructor.name%></div>
+              </div>
+              <div class="courseInfo bgF6 font12">
+              <div class="row"> 
+              <div class="col-lg-6">
+                <div class="favDiv pl8 pt8 font11">
+                <i class="fa fa-heart colorc52666"></i>Add to Favorite
+                </div>
+                </div>
+              <div class="col-lg-6 ">
+                <div class="classificationDiv pt8 font11">
+                <%= course.level %>
+                </div>
+              </div>
+              </div>
+              <div class="row"> 
+              <div class="col-lg-6">
+                <div class="ratingDiv pl8 pt8 pb8">
+                <div class="rating">
+                    <% if course.reviews.length > 0 %>
+                        <% avg_rating = course.reviews.average(:rating) %>
+                        <div class ="star-rating" data-score="<%=avg_rating%>"></div><%= "(#{course.reviews.length})" %>
+                     <% else %>
+                        <div class ="star-rating" data-score="0"></div>
+                    <% end %>
+                 <span class="color3">Reviews </span>
+                </div>
+
+                </div>  
+              </div>
+              <div class="col-lg-6">&nbsp; </div>
+              </div>
+              </div>
+            </div>
+        <%end %>
+        <%= will_paginate @courses, renderer: BootstrapPagination::Rails %>

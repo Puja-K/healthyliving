@@ -28,7 +28,7 @@
       <h3 class="mt10 colorc52666">Most Popular Courses</h3>
       <div class="row mb15">
           <div id="courselistings">
-            <%render 'courses'%>
+            <%=render 'courses'%>
           </div>
 
 
@@ -146,6 +146,10 @@
 </div>
 
 <script type="text/javascript">
+$(function(){
+   $('.pagination a').attr('data-remote', 'true')
+});
+
   $('.star-rating').raty({
       path: 'https://s3.amazonaws.com/culturehoops/stars/',
       hints: ['Not Bad', 'Good', 'Very Good', 'Excellent', 'Awesome'],
