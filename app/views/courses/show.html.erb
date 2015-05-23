@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-8 pr0">
                     <%= image_tag @course.image.url, :alt => "page4Header", :class => "page4Header"%>
-               </div>
+                </div>
                 <div class="col-lg-4 bgF6 font11 imgHeight">
                     <div class="row courseDetails">
                         <div class="col-lg-12 font12">
@@ -14,7 +14,7 @@
                             <p class="mb5 courseDescLong">
                                 <%= h(@course.description).gsub(/\n/,'<br>').html_safe %>
                             </p>
-                            
+
                             <div class="pb5"><strong>Teacher</strong>: <%= @course.instructor.name %></div>
                         </div>
                     </div>
@@ -23,7 +23,8 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="favDiv pt5">
-                                        <i class="fa fa-heart colorc52666"></i> <span class="font10">Add to Favorite</span>
+                                        <i class="fa fa-heart colorc52666"></i> <span
+                                            class="font10">Add to Favorite</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -35,7 +36,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="ratingDiv pt5 pb5">
-                                         <div class ="star-rating" data-score="<%=@avg_rating%>"></div>
+                                        <div class="star-rating" data-score="<%=@avg_rating%>"></div>
                                         <span class="font10">  
                                             <% if @reviews %>
                                                 <%= "#{@reviews.length} reviews" %>
@@ -49,27 +50,32 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 tac ptb3">
-                                   
 
-                                         <% if user_signed_in? %>
-                                              <% if Enrollment.where(user_id: current_user.id , course_id: @course.id ).count == 0 %>
-                                                <div class="center">  
-                                                  <%= link_to "Join This Course", course_enrollments_path(@course), method: :post, class: "btn btn-primary btn-lg"%>
-                                                </div>
-                                            <!--  otherwise show resume course button-->
-                                                <% else %>
-                                                    <div class="center">  
-                                                        <%= link_to "Resume", new_course_review_path(@course),  class: "btn btn-sm btn-primary" %>
-                                                    </div> 
-                                                <% end %>
-                                                <br>
-                                                <%= link_to "Write a Review", new_course_review_path(@course), class: "btn btn-sm btn-primary mb10" %>
-                                         <% else %>
-                                            <!-- User not signed in -->
-                                            <div class="center">  
-                                                <%= link_to "Join This Course", course_enrollments_path(@course), method: :post, class: "btn btn-primary btn-lg"%>
-                                            </div>
-                                        <% end %>        
+
+                                    <% if user_signed_in? %>
+                                    <% if Enrollment.where(user_id: current_user.id , course_id: @course.id ).count == 0
+                                    %>
+                                    <div class="center">
+                                        <%= link_to "Join This Course", course_enrollments_path(@course), method: :post,
+                                        class: "btn btn-sm btn-primary"%>
+                                    </div>
+                                    <!--  otherwise show resume course button-->
+                                    <% else %>
+                                    <div class="center">
+                                        <%= link_to "Resume", new_course_review_path(@course), class: "btn btn-sm
+                                        btn-primary" %>
+                                    </div>
+                                    <% end %>
+                                    <br>
+                                    <%= link_to "Write a Review", new_course_review_path(@course), class: "btn btn-sm
+                                    btn-primary mb10" %>
+                                    <% else %>
+                                    <!-- User not signed in -->
+                                    <div class="center">
+                                        <%= link_to "Join This Course", course_enrollments_path(@course), method: :post,
+                                        class: "btn btn-primary btn-lg"%>
+                                    </div>
+                                    <% end %>
 
                                 </div>
                             </div>
@@ -81,17 +87,43 @@
 
             <div class="row mt10">
                 <div class="col-lg-9">
-                    <div class="tags mb10 bgF6 pt5 pb5 pr5 pl5"><span>Test</span></div>
+
+
+                        <div class="col-lg-12 bootstrap-tagsinput">
+                            <!--tags div start-->
+                            <span class="tag label label-info">Amsterdam<span data-role="remove"></span></span> <span
+                                class="tag label label-info">Washington<span data-role="remove"></span></span> <span
+                                class="tag label label-info">Sydney<span data-role="remove"></span></span> <span
+                                class="tag label label-info">Beijing<span data-role="remove"></span></span> <span
+                                class="tag label label-info">Cairo<span data-role="remove"></span></span>
+
+                            <span
+                                class="twitter-typeahead"
+                                style="position: relative; display: inline; direction: ltr;">
+                                    <input type="text" style="width: 3em !important; position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);"
+                                           class="tt-hint" readonly=""  autocomplete="off" spellcheck="false" tabindex="-1">
+                                <input  type="text" placeholder=""  style="width: 3em !important; position: relative; vertical-align: top; background-color: transparent;"  class="tt-input" autocomplete="off" spellcheck="false" dir="auto">
+                                <pre  aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span
+                                class="tt-dropdown-menu"
+                                style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div
+                                class="tt-dataset-cities"></div></span></span>
+
+                        </div>
+
+
 
 
                     <!--TABS STRUCTURE START-->
-                    <div role="tabpanel">
+                    <div role="tabpanel" class="clearfix mt10">
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs bge2e2e2 font12 showCourseTab" role="tablist">
-                            <li role="presentation" class="active"><a href="#course" aria-controls="home" role="tab" data-toggle="tab">Couse Content</a></li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Instructor Profile</a></li>
-                            <li role="presentation"><a href="#review" aria-controls="messages" role="tab" data-toggle="tab">Review</a></li>
+                            <li role="presentation" class="active"><a href="#course" aria-controls="home" role="tab"
+                                                                      data-toggle="tab">Couse Content</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                                       data-toggle="tab">Instructor Profile</a></li>
+                            <li role="presentation"><a href="#review" aria-controls="messages" role="tab"
+                                                       data-toggle="tab">Review</a></li>
 
                         </ul>
 
@@ -101,103 +133,6 @@
                                 <!-- content start-->
                                 <%= render 'coursecurriculum' %>
                                 <!-- course content ends -->
-
-                                <!--
-
-                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
-                                    <div class="col-lg-11">
-                                        <div class="row no-gutter m0">
-                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
-                                            <div class="col-lg-11">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
-                                </div>
-                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
-                                    <div class="col-lg-11">
-                                        <div class="row no-gutter m0">
-                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
-                                            <div class="col-lg-11">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
-                                </div>
-                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
-                                    <div class="col-lg-11">
-                                        <div class="row no-gutter m0">
-                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
-                                            <div class="col-lg-11">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
-                                </div>
-                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
-                                    <div class="col-lg-11">
-                                        <div class="row no-gutter m0">
-                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
-                                            <div class="col-lg-11">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
-                                </div>
-
-                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
-                                    <div class="col-lg-11">
-                                        <div class="row no-gutter m0">
-                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
-                                            <div class="col-lg-11">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
-                                </div>
-
-                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
-                                    <div class="col-lg-11">
-                                        <div class="row no-gutter m0">
-                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
-                                            <div class="col-lg-11">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
-                                </div>
-
-                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
-                                    <div class="col-lg-11">
-                                        <div class="row no-gutter m0">
-                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
-                                            <div class="col-lg-11">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
-                                </div>
-                                <div class="row no-gutter font11 brb1 pt8 pb8 m0">
-                                    <div class="col-lg-11">
-                                        <div class="row no-gutter m0">
-                                            <div class="col-lg-1 tac "><i class="fa fa-play"></i></div>
-                                            <div class="col-lg-11">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 tac"><strong>00:06:11</strong></div>
-                                </div>
-
--->
-
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
                                 <%= render 'instructor_profile' %>
@@ -221,6 +156,7 @@
                     <div class="row">
                         <div id="more-courses-by-same-instructor">
                             <%=render 'more_courses_by_same_instructor'%>
+
                         </div>
                     </div>
                     
@@ -237,7 +173,8 @@
                         <img alt="yoga" class="yoga" src="/assets/yoga.png">
                         <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
 
-                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many
+                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for
+                            many
                             yoga Practitoners!
                         </div>
                         <div class="pl8 pr8 pt5 pb5"><strong>Teacher</strong>: Bikram Chaudhary</div>
@@ -273,7 +210,8 @@
                         <img alt="yoga" class="yoga" src="/assets/yoga.png">
                         <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
 
-                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many
+                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for
+                            many
                             yoga Practitoners!
                         </div>
                         <div class="pl8 pr8 pt5 pb5"><strong>Teacher</strong>: Bikram Chaudhary</div>
@@ -309,7 +247,8 @@
                         <img alt="yoga" class="yoga" src="/assets/yoga.png">
                         <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
 
-                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many
+                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for
+                            many
                             yoga Practitoners!
                         </div>
                         <div class="pl8 pr8 pt5 pb5"><strong>Teacher</strong>: Bikram Chaudhary</div>
@@ -345,7 +284,8 @@
                         <img alt="yoga" class="yoga" src="/assets/yoga.png">
                         <h5 class="pl8 pr8">Baksana (Crane Pose) Tutorial</h5>
 
-                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for many
+                        <div class="pl8 pr8">Having a smooth and successfull taking off into baksana of challanging for
+                            many
                             yoga Practitoners!
                         </div>
                         <div class="pl8 pr8 pt5 pb5"><strong>Teacher</strong>: Bikram Chaudhary</div>
@@ -384,23 +324,25 @@
 </div>
 
 <script type="text/javascript">
-  $('.star-rating').raty({
-      path: 'https://s3.amazonaws.com/culturehoops/stars/',
-      hints: ['Not Bad', 'Good', 'Very Good', 'Excellent', 'Awesome'],
-      readOnly: true,
-      score: function() {
-              return $(this).attr('data-score');
-  }
-  });
-
-    $(window).load(function(){
-        $(".imgHeight").height($("img.page4Header").height()-10);
+    $('.star-rating').raty({
+        path: 'https://s3.amazonaws.com/culturehoops/stars/',
+        hints: ['Not Bad', 'Good', 'Very Good', 'Excellent', 'Awesome'],
+        readOnly: true,
+        score: function () {
+            return $(this).attr('data-score');
+        }
     });
 
+<<<<<<< HEAD
 $(function(){
    $('.pagination a').attr('data-remote', 'true')
 });
 
+=======
+    $(window).load(function () {
+        $(".imgHeight").height($("img.page4Header").height());
+    });
+>>>>>>> 96097e769333c3d77a1fb260cb56288e33a57ccd
 
 
 </script>
