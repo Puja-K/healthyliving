@@ -22,7 +22,6 @@ class CoursesController < ApplicationController
   end
 
    def byCategory
-    sleep 2
       @courses = Course.where("category_id = ?", params[:category_id]).paginate(:page => params[:page], :per_page => 6)
       respond_to do |format|
         format.html {render 'byCategory'}
@@ -116,7 +115,11 @@ class CoursesController < ApplicationController
     def allcoursesbyinstructor
       @course = Course.find(params[:id])
       @courses = Course.where("instructor_id = ?", @course.instructor_id).paginate(:page => params[:page], :per_page => 3)
-
+      #respond_to do |format|
+        #format.html 
+        #format.json { render json: @courses }
+       # format.js
+      #end
     end
 
     helper_method :allcoursesbyinstructor
