@@ -1,4 +1,4 @@
- <% if @reviews.blank?%>
+<!-- <% if @reviews.blank?%>
                           <h3> No Reviews yet! Be the first to write a review </h3>
                       <% else %>
                           <table class="table">
@@ -16,7 +16,35 @@
                             </tr>
                             <% end %>
                           </table>
-                            
-                            
-                            
-                      <%end%>
+
+
+
+                      <%end%>-->
+
+
+
+
+
+<div class="courseContent clearfix pb0">
+ <% if @reviews.blank?%>
+ <h3> No Reviews yet! Be the first to write a review </h3>
+ <% else %>
+     <% @reviews.each do |review| %>
+
+
+  <div class="col-lg-2 pt10"><div class ="star-rating" data-score="<%=review.rating%>">
+  </div></div>
+    <div class="col-lg-10 pt10 bold">     <p> <%= review.user.name %></p></div>
+    <div class="col-lg-12 brb1 brdcd8 pt5"><p> <%= review.comment %> </p></div>
+
+
+
+     <% end %>
+
+
+ <%end%>
+</div>
+
+
+
+

@@ -1,10 +1,12 @@
 <% allcoursesbyinstructor.each do |c| %>
-                        <div class="courseDetails courseDetailsSideBar">
+                        <div class="bgF6 mb10">
+                        <div class="courseDetails courseDetailsSideBar pb8">
                             <%= image_tag c.image.url(:thumb), class: "yoga", alt: "yoga"%>
                             
-                        </div>
-                        <h5 class="pl8 pr8"><%= c.name %></h5>
+
+                        <h5 class="pl8 pr8 bold"><%= c.name %></h5>
                         <div class="pl8 pr8 courseDesc"><%= c.description %></div>
+                        </div>
                         <div class="courseInfo bgF6 font11">
                             <div class="row">
                                 <div class="col-lg-6">
@@ -19,22 +21,21 @@
                                 </div>
                             </div>
                             <div class="row">
-
-                                <div class="col-lg-6">
-                                    <div class="ratingDiv pt5 pb5">
-                                         <div class ="star-rating" data-score="<%=@avg_rating%>"></div>
-                                        <span class="font10">  
+                                <div class="col-lg-12 pb8">
+                                    <div class="ratingDiv pt5 pl8 ">
+                                         <div class ="star-rating pull-left mr8" data-score="<%=@avg_rating%>"></div>
+                                        <div class="font10 pull-left">
                                             <% if c.reviews %>
                                                 <%= "#{c.reviews.length} reviews" %>
                                             <%else%>
                                                 No Reviews
                                             <%end%>
-                                        </span>
+                                        </div>
                                     </div>
                                    
                                 </div>
-                                <div class="col-lg-6">&nbsp; </div>
                             </div>
                         </div>
-                        <%end %>
+                        </div>
+                    <%end %>
                         <%= will_paginate allcoursesbyinstructor, renderer: BootstrapPagination::Rails %>

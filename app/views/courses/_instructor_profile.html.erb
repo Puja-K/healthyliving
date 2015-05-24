@@ -1,10 +1,7 @@
-<div class="center">
-        <h3> About </h3>
-                     
-</div>
-<div class="content">
+<div class="courseContent pl10 pr10 pb10 pt10">
+    <div class="font17 bold colorLink"> About </div>
     <% if @course.instructor %>
-        <%= image_tag @course.instructor.avatar.url(:thumb), class: "img-circle"%>
+        <%= image_tag @course.instructor.avatar.url(:thumb), class: "img-circle pull-right pr10 pl10 pt10"%>
             <p>
                 <%=h(@course.instructor.details).gsub(/\n/,'<br>').html_safe%>
             </p>
