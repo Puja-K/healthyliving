@@ -251,11 +251,12 @@ img.page4Header {width:100%; max-height: 450px;}
 .showCourseTab li:hover a {color:#fff;}
 .showCourseTab li.active { border-radius:0; }
 .showCourseTab li a {color: #666; margin-right:0; border-radius: 0; }
+.courseBox .courseDetails img { opacity: 0.5;}
+.courseBox:hover .courseDetails img { opacity: 1;}
+.courseBox:hover .courseDetails, .courseBox:hover .courseInfo {opacity: 1; cursor: pointer; background: #f1f1f1;}
 
-.courseBox {opacity: 0.85}
-.courseBox:hover {opacity: 1; cursor: pointer;}
 
-/********** alert and messages***********/
+  /********** alert and messages***********/
 .alert {position: absolute; width: 80%; margin: 0 auto; z-index: 1; top: 0; left: 10%;}
 .btn-social{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.btn-social>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
 .btn-social.btn-lg{padding-left:61px}.btn-social.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
@@ -410,7 +411,26 @@ img.page4Header {width:100%; max-height: 450px;}
   }
   .badge { background: transparent; color: #333;}
 }
-.favDiv .fa-heart { font-size: 13px; text-shadow: -1px 1px 2px; margin-right: 3px;}
+
+.favDiv a {display:  inline-block;
+  -webkit-box-shadow: inset 0px 0px 6px #c52666;
+  -moz-box-shadow: inset 0px 0px 6px #c52666;
+  box-shadow: inset 0px 0px 6px #c52666;
+  padding: 3% 4%;
+  border-radius: 3px;
+  background: #fff;
+  font-size: 10px;
+}
+.favDiv a i.fa-heart { font-size: 13px; text-shadow: -1px 1px 2px; margin-right: 3px; color: #c52666}
+.favDiv a:hover i.fa-heart {color: #000;}
+.favDiv a:hover {-webkit-box-shadow: inset 0px 0px 6px #333;
+  -moz-box-shadow: inset 0px 0px 6px #333;
+  box-shadow: inset 0px 0px 6px #333;
+
+}
+
+
+
 
 
 
@@ -433,3 +453,9 @@ ul.dashNav { padding: 0; margin: 0}
 ul.dashNav li { padding: 0; margin: 0 -5px 0 0}
 ul.dashNav li a {color: #333; padding: 3px 5px; display:inline-block;}
 ul.dashNav li.active a, ul.dashNav li a:hover {color: #fff; background: #c52666;  }
+
+/************* classsroom page*************/
+.progressDiv .progress { background: #d7d7d7;}
+.progressDiv .progress-bar-info {  background-color: #118296;}
+
+#otherVideo  .courseContent {height: auto;}
