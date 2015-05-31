@@ -2,6 +2,14 @@
             <div class="col-lg-4 pr5 mt10 mb10 courseBox">
               <div class="courseDetails bgF6">
                 <%= link_to image_tag(course.image.url), course, :alt => "yoga", :class => "yoga" %>
+                  <div class="mask">
+
+                      <div class="favDiv pl8 pt8 font11">
+                          <a href="#"><i class="fa fa-heart colorc52666"></i> Add to Favorite</a>
+                      </div>
+
+
+                  </div>
               
               <h5 class="pl8 pr8"><%= course.name %></h5>
               <div class="pl8 pr8 courseDesc"><%= course.description %></div>
