@@ -72,6 +72,7 @@
 
                 </div>
             </div>
+            <div class="courseBox">
             <div class="clearfix">
                 <div class="col-lg-12 bgF6 pt10 courseDetails pr10 pl10">
                     <h4 class="m0 pb10"><%= enrollment.course.name %></h4>
@@ -85,6 +86,7 @@
                     <div class="pt5 pb5">
                         <strong>Teacher</strong>: <%= enrollment.course.instructor.name %>
                     </div>
+                    <div class="mask"></div>
                 </div>
             </div>
             <div class="clearfix">
@@ -103,7 +105,7 @@
                 </div>
 
             </div>
-
+            </div>
         </div>
 
         <% end %>
@@ -137,10 +139,12 @@
 
                 </div>
             </div>
+            <div class="courseBox">
             <div class="clearfix">
                 <div class="col-lg-12 bgF6 pt10 courseDetails">
                     <h4 class="m0 pb10">Bakasana (Crane Pose) Tutorial</h4>
                     <%= image_tag("yoga.png", :alt => "yoga", :class => "yoga") %>
+                    <div class="mask"></div>
                     <span class="font12">Added on 02/02/2015</span>
 
                     <div>
@@ -169,7 +173,7 @@
                 </div>
 
             </div>
-
+            </div>
         </div>
         <div class="col-lg-3 ">
             <div class="clearfix">

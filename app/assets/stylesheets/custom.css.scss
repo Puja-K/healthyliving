@@ -251,9 +251,8 @@ img.page4Header {width:100%; max-height: 450px;}
 .showCourseTab li:hover a {color:#fff;}
 .showCourseTab li.active { border-radius:0; }
 .showCourseTab li a {color: #666; margin-right:0; border-radius: 0; }
-.courseBox .courseDetails img { opacity: 0.5;}
-.courseBox:hover .courseDetails img { opacity: 1;}
-.courseBox:hover .courseDetails, .courseBox:hover .courseInfo {opacity: 1; cursor: pointer; background: #f1f1f1;}
+//.courseBox .courseDetails img { opacity: 0.2;}
+
 
 
   /********** alert and messages***********/
@@ -413,9 +412,9 @@ img.page4Header {width:100%; max-height: 450px;}
 }
 
 .favDiv a {display:  inline-block;
-  -webkit-box-shadow: inset 0px 0px 6px #c52666;
-  -moz-box-shadow: inset 0px 0px 6px #c52666;
-  box-shadow: inset 0px 0px 6px #c52666;
+  //-webkit-box-shadow: inset 0px 0px 6px #c52666;
+  //-moz-box-shadow: inset 0px 0px 6px #c52666;
+  //box-shadow: inset 0px 0px 6px #c52666;
   padding: 3% 4%;
   border-radius: 3px;
   background: #fff;
@@ -423,21 +422,10 @@ img.page4Header {width:100%; max-height: 450px;}
 }
 .favDiv a i.fa-heart { font-size: 13px; text-shadow: -1px 1px 2px; margin-right: 3px; color: #c52666}
 .favDiv a:hover i.fa-heart {color: #000;}
-.favDiv a:hover {-webkit-box-shadow: inset 0px 0px 6px #333;
-  -moz-box-shadow: inset 0px 0px 6px #333;
-  box-shadow: inset 0px 0px 6px #333;
+.favDiv a:hover {-webkit-box-shadow: inset 0px 0px 6px #ddd; -moz-box-shadow: inset 0px 0px 6px #ddd; box-shadow: inset 0px 0px 6px #ddd; border: 1px solid #CCC}
 
-}
-
-
-
-
-
-
-
-.bootstrap-tagsinput {background-color: #fff; border: 1px solid #ccc;  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  transition: border linear 0.2s, box-shadow linear 0.2s; display: inline-block; padding: 4px 6px; margin-bottom: 10px; color: #555555;
-  vertical-align: middle; border-radius: 4px; max-width: 100%; line-height: 22px; }
+.bootstrap-tagsinput {background-color: #fff; border: 1px solid #ccc;  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); transition: border linear 0.2s, box-shadow linear 0.2s; display: inline-block; padding: 4px 6px; margin-bottom: 10px; color: #555555;
+  vertical-align: middle; border-radius: 4px; max-width: 100%; line-height: 22px;}
 .bootstrap-tagsinput input {border: none;box-shadow: none; background-color: transparent; padding: 0; margin: 0; width: auto !important;  max-width: inherit; }
 .bootstrap-tagsinput input:focus { border: none; box-shadow: none; }
 .bootstrap-tagsinput .tag { cursor: pointer; margin-right: 5px; color: white;}
@@ -457,5 +445,155 @@ ul.dashNav li.active a, ul.dashNav li a:hover {color: #fff; background: #c52666;
 /************* classsroom page*************/
 .progressDiv .progress { background: #d7d7d7;}
 .progressDiv .progress-bar-info {  background-color: #118296;}
-
 #otherVideo  .courseContent {height: auto;}
+
+
+/*********************************************************************/
+
+.courseDetails {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  /*-webkit-box-shadow: 1px 1px 2px #e6e6e6;
+  -moz-box-shadow: 1px 1px 2px #e6e6e6;
+  box-shadow: 1px 1px 2px #e6e6e6;*/
+  cursor: default;
+}
+
+.courseDetails .mask {position: absolute; overflow: hidden; top: 0; left: 0; height: 450px; width: 100%;}
+.courseDetails  .mask {
+  background-color: rgba(0, 0, 0, 0.5);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out 0.5s;
+  -moz-transition: all 0.3s ease-out 0.5s;
+  -o-transition: all 0.3s ease-out 0.5s;
+  -ms-transition: all 0.3s ease-out 0.5s;
+  transition: all 0.3s ease-out 0.5s;
+}
+/*.courseDetails  h2 {
+  -webkit-transform: translateY(-200px);
+  -moz-transform: translateY(-200px);
+  -o-transform: translateY(-200px);
+  -ms-transform: translateY(-200px);
+  transform: translateY(-200px);
+  -webkit-transition: all 0.2s ease-in-out 0.1s;
+  -moz-transition: all 0.2s ease-in-out 0.1s;
+  -o-transition: all 0.2s ease-in-out 0.1s;
+  -ms-transition: all 0.2s ease-in-out 0.1s;
+  transition: all 0.2s ease-in-out 0.1s;
+}
+.courseDetails  p {
+  color: #333;
+  -webkit-transform: translateY(-200px);
+  -moz-transform: translateY(-200px);
+  -o-transform: translateY(-200px);
+  -ms-transform: translateY(-200px);
+  transform: translateY(-200px);
+  -webkit-transition: all 0.2s ease-in-out 0.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  -ms-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;
+}
+.courseDetails  a.info {
+  -webkit-transform: translateY(-200px);
+  -moz-transform: translateY(-200px);
+  -o-transform: translateY(-200px);
+  -ms-transform: translateY(-200px);
+  transform: translateY(-200px);
+  -webkit-transition: all 0.2s ease-in-out 0.3s;
+  -moz-transition: all 0.2s ease-in-out 0.3s;
+  -o-transition: all 0.2s ease-in-out 0.3s;
+  -ms-transition: all 0.2s ease-in-out 0.3s;
+  transition: all 0.2s ease-in-out 0.3s;
+}*/
+.courseDetails:hover .mask {
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+  top: 0px;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  transition-delay: 0s;
+  -webkit-animation: bounceY 0.3s linear;
+  -moz-animation: bounceY 0.3s linear;
+  -ms-animation: bounceY 0.3s linear;
+  animation: bounceY 0.3s linear;
+  cursor: pointer
+}
+
+
+.courseBox:hover .courseInfo {opacity: 1; cursor: pointer; background: rgba(0, 0, 0, 0.5); -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  transition-delay: 0s;
+  -webkit-animation: bounceY 0.3s linear;
+  -moz-animation: bounceY 0.3s linear;
+  -ms-animation: bounceY 0.3s linear;
+  animation: bounceY 0.3s linear;
+}
+/*.courseDetails :hover h2 {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition-delay: 0.4s;
+  -moz-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  -ms-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.courseDetails :hover p {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  -ms-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.view-eighth:hover a.info {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  transition-delay: 0s;
+}*/
+@keyframes bounceY {
+  0% { transform: translateY(-205px);}
+  40% { transform: translateY(-100px);}
+  65% { transform: translateY(-52px);}
+  82% { transform: translateY(-25px);}
+  92% { transform: translateY(-12px);}
+  55%, 75%, 87%, 97%, 100% { transform: translateY(0px);}
+}
+@-moz-keyframes bounceY {
+  0% { -moz-transform: translateY(-205px);}
+  40% { -moz-transform: translateY(-100px);}
+  65% { -moz-transform: translateY(-52px);}
+  82% { -moz-transform: translateY(-25px);}
+  92% { -moz-transform: translateY(-12px);}
+  55%, 75%, 87%, 97%, 100% { -moz-transform: translateY(0px);}
+}
+@-webkit-keyframes bounceY {
+  0% { -webkit-transform: translateY(-205px);}
+  40% { -webkit-transform: translateY(-100px);}
+  65% { -webkit-transform: translateY(-52px);}
+  82% { -webkit-transform: translateY(-25px);}
+  92% { -webkit-transform: translateY(-12px);}
+  55%, 75%, 87%, 97%, 100% { -webkit-transform: translateY(0px);}
+}

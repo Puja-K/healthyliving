@@ -1,8 +1,8 @@
 <% allcoursesbyinstructor.each do |c| %>
-                        <div class="bgF6 mb10">
+                        <div class="bgF6 mb10 courseBox">
                         <div class="courseDetails courseDetailsSideBar pb8">
                             <%= image_tag c.image.url(:thumb), class: "yoga", alt: "yoga"%>
-                            
+                            <div class="mask">&nbsp;</div>
 
                         <h5 class="pl8 pr8 bold"><%= c.name %></h5>
                         <div class="pl8 pr8 courseDesc"><%= c.description %></div>
