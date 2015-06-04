@@ -78,7 +78,7 @@
                     <h4 class="m0 pb10"><%= enrollment.course.name %></h4>
                     <%= image_tag enrollment.course.image.url, :alt => "yoga", :class => "yoga" %>
 
-                    <span class="font12">Added on 02/02/2015</span>
+                    <span class="font12">Added on <%=enrollment.course.created_at%></span>
 
                     <div class="courseDesc">
                         <%= enrollment.course.description %>

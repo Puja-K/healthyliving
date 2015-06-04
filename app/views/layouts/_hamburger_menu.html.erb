@@ -8,28 +8,24 @@
 					<!--<% end %>-->
 					<a href="#" data-toggle="dropdown" class="dropdown-toggle hamburgerMenu" id="browLib"><span class="glyphicon glyphicon-menu-hamburger colorLinkDark"></span> Browse The Library</a>
 					<ul class="dropdown-menu menuDiv" id="menu1">
-
+						<% toplevelmenu.each do |category| %>
+						
 						<li class="dropdown-submenu">
-							<a tabindex="-1" href="#">Yoga</a>
-							<ul class="dropdown-menu subMenuCustom">
-								<li><a tabindex="-1" href="#">Second level</a></li>
-								<li class="dropdown-submenu ">
-									<a href="#">Even More..</a>
+							<%= link_to category.name, coursesByCategory_path(category)%>
+							
+							<% if category.courses.count > 1%>
+								
 									<ul class="dropdown-menu subMenuCustom">
-										<li><a href="#">3rd level</a></li>
-										<li><a href="#">3rd level</a></li>
+										<% category.courses.each do |course| %>
+											<li><%= link_to course.name, course_path(course)%> </li>
+											
+										<%end%>
 									</ul>
-								</li>
-								</ul>
+								
+							<%end%>
 						</li>
 						<li class="divider"></li>
-						<li><a href="#">Buddhism</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Skishism</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Ayurveda</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Meditation</a></li>
+						<%end%>
 					</ul>
 				</div>
 			</div>
