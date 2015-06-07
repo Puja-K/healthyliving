@@ -2,7 +2,7 @@
             <div class="col-lg-4 pr5 mt10 mb10 courseBox">
               <div class="courseDetails bgF6">
                 <%= link_to image_tag(course.image.url), course, :alt => "yoga", :class => "yoga" %>
-                  <div class="mask">
+                  <div class="mask" >
 
                       <div class="favDiv pl8 pt8 font11">
                           <a href="#"><i class="fa fa-heart colorc52666"></i> Add to Favorite</a>
@@ -48,3 +48,26 @@
             </div>
         <%end %>
         <%= will_paginate @courses, renderer: BootstrapPagination::Rails %>
+
+
+<script>
+
+    $(document).ready(function(){
+
+        $(".mask").each(function(){
+            var urlAdd = $(this).parent().children('a').attr('href');
+            if (urlAdd != undefined){
+                $(this).bind("click", function() {
+                    location.href = urlAdd
+                });
+            }
+            else {}
+
+        });
+
+    });
+
+
+
+
+</script>

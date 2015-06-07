@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.2"
+ruby "1.9.3"
 gem 'rails', '4.1.6'	
 
 # Use Bootstrap
@@ -56,8 +56,6 @@ gem 'searchkick'
 gem 'omniauth'
 
 gem 'omniauth-facebook'
-
-
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
 
