@@ -17,6 +17,12 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+<div class="form-group">
+                <div>Gender:</div>
+                <%= f.radio_button :gender, "Male", :checked => (resource.gender == 'Male') %> <%= label_tag(:gender, "Male") %>
+                <%= f.radio_button :gender, "Female", :checked => (resource.gender == 'Female') %> <%= label_tag(:gender, "Female") %>
+          
+</div>
   <div class="form-group">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
     <%= f.password_field :password, autocomplete: "off", class: "form-control"  %>

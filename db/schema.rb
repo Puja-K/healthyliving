@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414194212) do
+ActiveRecord::Schema.define(version: 20150611054834) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -62,22 +62,8 @@ ActiveRecord::Schema.define(version: 20150414194212) do
     t.datetime "updated_at"
   end
 
-  create_table "courses", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "level"
-    t.integer  "duration"
-    t.string   "format"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.integer  "category_id"
-    t.string   "status",             default: "new"
-    t.integer  "instructor_id"
-  end
+# Could not dump table "courses" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "enrollments", force: true do |t|
     t.datetime "created_at"
@@ -194,6 +180,7 @@ ActiveRecord::Schema.define(version: 20150414194212) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "gender"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

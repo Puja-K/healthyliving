@@ -34,8 +34,8 @@
             	</div>
             	<div class="row mt15">
             		<div class="col-lg-3 tar">Gender:</div>
-            		<div class="col-lg-3"><input type="radio"> <label>Male</label></div>
-            		<div class="col-lg-4"><input type="radio"><label>Female</label> </div>
+            		<div class="col-lg-3"><%= f.radio_button :gender, "Male", :checked => (:gender == 'Male') %> <%= label_tag(:gender, "Male") %></div>
+            		<div class="col-lg-4"><%= f.radio_button :gender, "Female", :checked => (:gender == 'Female') %> <%= label_tag(:gender, "Female") %></div>
 					<div class="col-lg-2"></div>
             	</div>
             	

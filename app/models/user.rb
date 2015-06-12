@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
   validates :name, presence: true
+  validates :gender, presence: true
   has_many :enrollments
   has_many :reviews, dependent: :destroy
   has_many :shortlists
